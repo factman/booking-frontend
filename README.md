@@ -1,2 +1,2 @@
-# peace-react
-peace react app
+# bus-booking
+bus-booking app
