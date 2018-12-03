@@ -1,0 +1,94 @@
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <p class="display-4"> Lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sunt similique perspiciatis
+                    voluptates sequi quis rem doloribus! Perspiciatis facilis natus nemo blanditiis enim ab nihil
+                    dolorem fugit! Expedita, praesentium corporis.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci labore animi beatae iusto
+                    temporibus. Modi obcaecati nobis quia. Voluptatum, doloribus? Ipsa sapiente cumque possimus beatae
+                    quisquam eveniet neque natus sit.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas possimus consequatur libero
+                    aspernatur non facere debitis! Harum molestias rem iste atque, dolor aliquid fugit nesciunt
+                    molestiae vero? Voluptas, minus velit.</p>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-wrapper">
+                    <div class="form-header bg-orange">
+                        <h3 class="text-uppercase text-white bg-orange pmarginless padding-10">
+                            BOOK a TICKET
+                        </h3>
+                    </div>
+                    <div class="form-content bg-white padding-20">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="trip-type-wrapper">
+                                    <div class="trip-type">
+                                        <div class="trip one-way noselect active">One Way</div>
+                                        <div class="trip round-trip noselect">Round Trip</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="travellingFrom">Travelling from:</label>
+                                    <select class="form-control" id="travellingFrom">
+                                        <option placeholder>Departure Terminal</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="travellingTo">Travelling To:</label>
+                                    <select class="form-control" id="travellingTo">
+                                        <option placeholder>Select Destination</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="datepicker-container">
+                                    <div class="form-group">
+                                        <label for="dateDeparture">Departure Date:</label>
+                                        <input class="form-control datetimepicker" id="dateDeparture" placeholder="06/07/2017"
+                                            name="dp" [(ngModel)]="departure" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" *ngIf="arrivalStatus">
+                                <div class="datepicker-container">
+                                    <div class="form-group">
+                                        <label for="dateArrival">Arrival Date:</label>
+                                        <input class="form-control datetimepicker" id="dateArrival" placeholder="06/07/2017"
+                                            name="dp" [(ngModel)]="arrival" ngbDatepicker #a="ngbDatepicker" (click)="a.toggle()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="adult">Adult:</label>
+                                    <select class="form-control" id="adult">
+                                        <option placeholder>Adult</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-primary btn-round btn-block text-uppercase"
+                                    (click)="onSubmit()">
+                                    Book Now </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

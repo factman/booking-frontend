@@ -1,0 +1,56 @@
+.border-top-only{
+    border-top: 1px;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+}
+
+.border-color-orange{
+    border-top-style: solid;
+    border-block-start-color: $primary-color;
+}
+.font-size-rem-13{
+    font-size: 1.3rem;
+}
+
+.font-size-rem-30{
+    font-size: 3rem;
+}
+
+.font-size-rem-20{
+    font-size: 2rem;
+}
+
+.text-orange{
+    color: $primary-color;
+}
+
+.flex-direction-row{
+    flex-direction: row !important;
+}
+
+.fab-btn{
+    border-radius: 50%;
+}
+
+.padding-10-15{
+    padding: 10px 15px !important;
+}
+
+.margin-top-15{
+    margin-top: 15px !important;
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

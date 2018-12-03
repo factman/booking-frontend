@@ -22,7 +22,7 @@ import { NgbdModalBasic } from './modal/modal.component';
         NouisliderModule,
         RouterModule,
         JWBootstrapSwitchModule
-      ],
+    ],
     declarations: [
         ComponentsComponent,
         BasicelementsComponent,
@@ -32,6 +32,6 @@ import { NgbdModalBasic } from './modal/modal.component';
         NotificationComponent,
         NgbdModalBasic
     ],
-    exports:[ ComponentsComponent ]
+    exports: [ComponentsComponent]
 })
 export class ComponentsModule { }

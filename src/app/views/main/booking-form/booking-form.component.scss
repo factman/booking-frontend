@@ -1,0 +1,47 @@
+.form-wrapper{
+    border: 1px solid #e95e38;
+    margin-top: -7vh;
+    // min-height: 300px;
+}
+
+.bg-orange{
+    background: #e95e38;
+}
+
+.pmarginless{
+    margin: 0px !important;
+}
+
+.padding-10{
+    padding: 10px;
+}
+
+.padding-20{
+    padding: 20px;
+}
+
+.form-content{
+    height: 85%;
+}
+
+.trip-type-wrapper{
+    text-align: center;
+    .trip-type{
+        background: #ffffff;
+        color: #e95e38;
+        border: 1px solid #e95e38;
+        display: inline-block;
+        margin: 10px;
+        div {
+            display:inherit;
+            padding: 10px;
+            cursor: pointer;
+
+        }
+        div.active{
+            background: #e95e38;
+            color: #ffffff;
+        }
+    }
+}
+

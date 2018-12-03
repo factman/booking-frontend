@@ -14,7 +14,7 @@ import * as Rellax from 'rellax';
 })
 
 export class ComponentsComponent implements OnInit, OnDestroy {
-    data : Date = new Date();
+    data: Date = new Date();
 
     page = 4;
     page1 = 5;
@@ -23,7 +23,7 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     focus1;
     focus2;
 
-    date: {year: number, month: number};
+    date: { year: number, month: number };
     model: NgbDateStruct;
 
     public isCollapsed = true;
@@ -32,7 +32,7 @@ export class ComponentsComponent implements OnInit, OnDestroy {
 
     state_icon_primary = true;
 
-    constructor( private renderer : Renderer, config: NgbAccordionConfig) {
+    constructor(private renderer: Renderer, config: NgbAccordionConfig) {
         config.closeOthers = true;
         config.type = 'info';
     }
@@ -41,19 +41,19 @@ export class ComponentsComponent implements OnInit, OnDestroy {
         return d.getDay() === 0 || d.getDay() === 6;
     }
 
-    isDisabled(date: NgbDateStruct, current: {month: number}) {
+    isDisabled(date: NgbDateStruct, current: { month: number }) {
         return date.month !== current.month;
     }
 
     ngOnInit() {
-      var rellaxHeader = new Rellax('.rellax-header');
+        var rellaxHeader = new Rellax('.rellax-header');
 
         var navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.add('navbar-transparent');
         var body = document.getElementsByTagName('body')[0];
         body.classList.add('index-page');
     }
-    ngOnDestroy(){
+    ngOnDestroy() {
         var navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.remove('navbar-transparent');
         var body = document.getElementsByTagName('body')[0];
