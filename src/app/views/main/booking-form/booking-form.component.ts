@@ -1,23 +1,57 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbDatepickerConfig, NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 import Choices from 'choices.js';
 import { Booking } from './booking.model';
 import { CustomDate } from './customdate.model'
+import { NgbDateCustom } from './ngb-date.model';
 
 @Component({
     selector: 'app-booking-form',
     templateUrl: './booking-form.component.html',
-    styleUrls: ['./booking-form.component.scss']
+    styleUrls: ['./booking-form.component.scss'],
+    providers: [NgbDatepickerConfig]
 })
 export class BookingFormComponent implements OnInit {
     public booking: Booking;
-    public departure: CustomDate;
+    public departure: NgbDateStruct;
     public arrival: CustomDate;
     public arrivalStatus: boolean;
-    constructor() {
+    constructor(config: NgbDatepickerConfig, calendar: NgbCalendar) {
         this.booking = new Booking();
         this.arrivalStatus = false
-        this.departure = new CustomDate();
+        // this.departure = new CustomDate();
         this.arrival = new CustomDate();
+
+        config.minDate = { year: 1900, month: 1, day: 1 };
+        config.maxDate = { year: 2099, month: 12, day: 31 };
+
+        // days that don't belong to current month are not visible
+        config.outsideDays = 'hidden';
+
+        // weekends are disabled
+        config.markDisabled = (date: NgbDateCustom) => {
+            const today = calendar.getToday();
+            if (date.year < today.year) {
+                return true
+            } else if (date.year === today.year) {
+                if (date.month < today.month) {
+                    return true
+                } else if (date.month === today.month) {
+                    if (date.day < today.day) {
+                        return true;
+                    } else if (date.day === today.day) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 
     ngOnInit() {
