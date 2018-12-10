@@ -29,7 +29,7 @@ export class BookingFormComponent implements OnInit {
         // days that don't belong to current month are not visible
         config.outsideDays = 'hidden';
 
-        // weekends are disabled
+        // days before today and tday are disabled
         config.markDisabled = (date: NgbDateCustom) => {
             const today = calendar.getToday();
             if (date.year < today.year) {
