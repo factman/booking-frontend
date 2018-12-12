@@ -12,6 +12,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BusSelectionComponent } from './views/bus-selection/bus-selection.component';
+import { PassagerDetailsComponent } from './views/passager-details/passager-details.component';
+import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
+import { ScheduleBusComponent } from './views/bus-selection/schedule-bus/schedule-bus.component';
+import { SeatsComponent } from './views/bus-selection/schedule-bus/seats/seats.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +23,10 @@ import { BusSelectionComponent } from './views/bus-selection/bus-selection.compo
         NavbarComponent,
         FooterComponent,
         BusSelectionComponent,
+        SeatsComponent,
+        PassagerDetailsComponent,
+        SuccessfulPaymantComponent,
+        ScheduleBusComponent,
     ],
     imports: [
         BrowserAnimationsModule,

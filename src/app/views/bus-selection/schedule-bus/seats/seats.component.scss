@@ -1,0 +1,23 @@
+.seat-number{
+    border: 1px solid #e95e38;
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.seat-number.active{
+    background-color: #e95e38;
+    color:#ffffff;
+}
+
+
+.no-select{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+}

@@ -1,0 +1,28 @@
+.p-20{
+    padding: 20px;
+}
+
+.p-10{
+    padding: 10px;
+}
+
+.bg-light-grey{
+    background: #e4e4e4;
+}
+.p-relative{
+    position: relative;
+}
+.price-tag{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #e95e38;
+}
+
+@media(min-width: 576px) {
+    .p-absolute{
+        position: absolute;
+    }
+    .pb-35px{
+        bottom: 35px;
+    }
+}

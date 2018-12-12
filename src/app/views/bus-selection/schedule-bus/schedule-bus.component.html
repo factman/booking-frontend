@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <h4>BENZ</h4>
+            <p>Imo (Owerri) ==> Lagos (Jibowu)</p>
+        </div>
+        <div class="col-sm-3">
+            <h4>Departing</h4>
+            <p>6:15 AM</p>
+        </div>
+        <div class="col-sm-3 justify-content-center align-item-center p-relative">
+            <p class="p-absolute pb-35px">10 Seat(s) available</p>
+        </div>
+        <div class="col-sm-3">
+            <p>Adult: <span class="price-tag">₦ 5,250.00</span></p>
+            <button class="btn btn-primary" (click)="changeCurrentState()">View Seat</button>
+        </div>
+    </div>
+</div>
+<div class="container p-20 bg-light-grey" [@changeState]="currentState">
+    <div class="row">
+        <div class="col-sm-6">
+            <app-seats></app-seats>
+        </div>
+        <div class="col-sm-12 text-center">
+            <div class="btn btn-primary">
+                Continue
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 p-20"></div>
+    </div>
+</div>

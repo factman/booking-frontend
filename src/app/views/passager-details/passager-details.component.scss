@@ -1,4 +1,4 @@
-.bus-selection-page{
+.passager-details-page{
     .page-header{
         height: 10vh !important;
 
@@ -18,31 +18,37 @@
         }
     }
 }
-.p-20{
-    padding: 20px;
+
+.passager-detail{
+    background: white;
+    border-top: 1px solid #e14213;
+    border-radius: 5px;
+    padding: 0px 20px 20px 20px;
+    margin-bottom:20px;
+}
+.f-right{
+    float:right;
+}
+.fw-bold{
+    font-weight: bold;
+}
+.fs-12rem{
+    font-size: 1.2rem;
 }
 
-.p-10{
-    padding: 10px;
-}
-
-.bg-light-grey{
-    background: #e4e4e4;
-}
-.p-relative{
-    position: relative;
-}
 .price-tag{
     font-size: 1.25rem;
     font-weight: bold;
     color: #e95e38;
 }
-
-@media(min-width: 576px) {
-    .p-absolute{
-        position: absolute;
-    }
-    .pb-35px{
-        bottom: 35px;
-    }
+.bb-black{
+    border-bottom: 1px solid #444;
+}
+.total-payment{
+    background: #e95e38;
+    color: #ffffff;
+    padding:15px 15px 1px 15px;
+}
+.marginless{
+    margin:0px !important;
 }

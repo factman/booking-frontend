@@ -10,12 +10,16 @@ import { LoginComponent } from './examples/login/login.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { BusSelectionComponent } from './views/bus-selection/bus-selection.component';
+import { PassagerDetailsComponent } from './views/passager-details/passager-details.component';
+import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index', component: MainComponent },
     { path: 'components', component: ComponentsComponent },
     { path: 'bus-selection', component: BusSelectionComponent },
+    { path: 'passager-details', component: PassagerDetailsComponent },
+    { path: 'successful-payment', component: SuccessfulPaymantComponent },
     { path: 'nucleoicons', component: NucleoiconsComponent },
     { path: 'examples/landing', component: LandingComponent },
     { path: 'examples/login', component: LoginComponent },

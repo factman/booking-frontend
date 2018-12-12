@@ -1,4 +1,4 @@
-.bus-selection-page{
+.successful-payment-page{
     .page-header{
         height: 10vh !important;
 
@@ -18,31 +18,27 @@
         }
     }
 }
-.p-20{
-    padding: 20px;
+.pt-60px{
+    padding-top: 60px;
 }
-
-.p-10{
-    padding: 10px;
+.pb-60px{
+    padding-bottom: 60px;
 }
-
-.bg-light-grey{
-    background: #e4e4e4;
+.fs-25rem{
+    font-size: 2.5rem;
 }
-.p-relative{
-    position: relative;
+.fw-200{
+    font-weight: 200;
 }
-.price-tag{
-    font-size: 1.25rem;
+.fw-bold{
     font-weight: bold;
-    color: #e95e38;
 }
-
-@media(min-width: 576px) {
-    .p-absolute{
-        position: absolute;
-    }
-    .pb-35px{
-        bottom: 35px;
-    }
+.fs-125rem {
+    font-size: 1.25rem
+}
+.fw-400 {
+    font-weight: 400;
+}
+.marginless{
+    margin: 0 !important;
 }
