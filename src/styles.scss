@@ -34,10 +34,24 @@
     overflow: hidden;
 }
 
-
-
 .mt-50px{
     margin-top: 50px;
+}
+
+.pt-20px{
+    padding-top:20px
+}
+
+.pt-30px{
+    padding-top:30px
+}
+
+.fs-18px{
+    font-size: 18px;
+}
+
+.marginless{
+    margin: 0px !important;
 }
 
 @media (max-width: 768px){

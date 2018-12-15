@@ -12,6 +12,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { BusSelectionComponent } from './views/bus-selection/bus-selection.component';
 import { PassagerDetailsComponent } from './views/passager-details/passager-details.component';
 import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
+import { AboutUsComponent } from './views/about-us/about-us.component';
 
 const routes: Routes = [
     // { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'bus-selection', component: BusSelectionComponent },
     { path: 'passager-details', component: PassagerDetailsComponent },
     { path: 'successful-payment', component: SuccessfulPaymantComponent },
+    { path: 'about-us', component: AboutUsComponent },
     { path: 'nucleoicons', component: NucleoiconsComponent },
     { path: 'examples/landing', component: LandingComponent },
     { path: 'examples/login', component: LoginComponent },

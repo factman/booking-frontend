@@ -18,6 +18,8 @@ import { ScheduleBusComponent } from './views/bus-selection/schedule-bus/schedul
 import { SeatsComponent } from './views/bus-selection/schedule-bus/seats/seats.component';
 import { BookingService } from './views/booking.service';
 import { DataTargetDirective } from './views/data-target.directive';
+import { AboutUsComponent } from './views/about-us/about-us.component';
+import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +32,8 @@ import { DataTargetDirective } from './views/data-target.directive';
         SuccessfulPaymantComponent,
         ScheduleBusComponent,
         DataTargetDirective,
+        AboutUsComponent,
+        NoticeCardComponent,
     ],
     imports: [
         BrowserAnimationsModule,
