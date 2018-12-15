@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { BookingService } from 'app/views/booking.service';
 
 @Component({
     selector: 'app-seats',
@@ -8,9 +9,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class SeatsComponent implements OnInit {
     seatNumberSet = new Set();
     @Output() seatEvent = new EventEmitter<{}>();
-    @Input() numberOfSeat: Number = 1;
     currentSeat: string;
-    constructor() { }
+    constructor(private booking: BookingService) { }
 
     ngOnInit() {
     }
@@ -18,10 +18,18 @@ export class SeatsComponent implements OnInit {
     getSeatNumber(event) {
         this.currentSeat = event.target.innerText.trim();
         const currentSeatSelector = document.querySelector('[data-seat="' + this.currentSeat + '"]');
-        if ((this.seatNumberSet.size < this.numberOfSeat) || currentSeatSelector.className.includes('active')) {
+        if ((this.seatNumberSet.size < this.booking.numberOfBooking) || currentSeatSelector.className.includes('active')) {
             this.seatNumberSet.add(this.currentSeat);
             this.crossBrowserToggleClass(currentSeatSelector, 'active');
         }
+    }
+
+    getSelectedSeats(seatNumbers) {
+        const replacement = ' and';
+        this.booking.seatNumber = Array.from(seatNumbers)
+            .sort((a: number, b: number) => a - b)
+            .join(', ')
+            .replace(/,([^,]*)$/, replacement + '$1');
     }
 
     crossBrowserToggleClass(element, classString) {
@@ -30,7 +38,7 @@ export class SeatsComponent implements OnInit {
             if (!element.className.includes('active')) {
                 this.seatNumberSet.delete(this.currentSeat);
             }
-            this.seatEvent.emit(this.seatNumberSet);
+            this.getSelectedSeats(this.seatNumberSet);
         } else {
             // For IE9
             const classes = element.className.split(' ');

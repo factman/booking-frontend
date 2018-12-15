@@ -24,7 +24,8 @@
                             "src/styles.scss",
                             "src/assets/sass/now-ui-kit.scss",
                             "src/assets/css/demo.css",
-                            "node_modules/choices.js/public/assets/styles/choices.min.css"
+                            "node_modules/choices.js/public/assets/styles/choices.min.css",
+                            "node_modules/aos/dist/aos.css"
                         ],
                         "scripts": [
                             "node_modules/rellax/rellax.min.js"

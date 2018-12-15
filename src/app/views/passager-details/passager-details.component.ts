@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import Choices from 'choices.js';
+import { BookingService } from '../booking.service';
 
 @Component({
     selector: 'app-passager-details',
@@ -8,27 +9,50 @@ import Choices from 'choices.js';
 })
 export class PassagerDetailsComponent implements OnInit, OnDestroy {
     primaryColor: string;
-    constructor() {
+    constructor(private booking: BookingService) {
         this.primaryColor = '#f96332';
     }
 
     ngOnInit() {
-        const navbar = document.getElementsByTagName('nav')[0];
-        navbar.classList.add('navbar-transparent');
-        const body = document.getElementsByTagName('body')[0];
-        body.classList.add('passager-details-page');
     }
 
     ngOnDestroy() {
-        const navbar = document.getElementsByTagName('nav')[0];
-        navbar.classList.remove('navbar-transparent');
-        const body = document.getElementsByTagName('body')[0];
-        body.classList.remove('passager-details-page');
     }
 
     initialDeclaration() {
         const gender = document.getElementById('gender');
-        const choicesFrom = new Choices(gender);
+        const choicesGender = new Choices(gender);
+
+        gender.addEventListener('addItem', (event) => {
+            this.booking.gender = (<CustomEvent>event).detail.value;
+        }, false);
+
+        if (this.booking.gender !== undefined) {
+            choicesGender.setChoiceByValue(this.booking.gender);
+        }
+
+        this.getElementValue('firstname');
+        this.getElementValue('lastname');
+        this.getElementValue('email');
+        this.getElementValue('phone');
+        this.getElementValue('nextEmail');
+        this.getElementValue('nextName');
+        this.getElementValue('nextPhone');
+    }
+
+    updateValue(event) {
+        this.booking[event.target.name] = event.target.value;
+    }
+
+    getElementValue(name) {
+        if (this.booking[name]) {
+            const getElement = <HTMLInputElement>document.getElementById(name);
+            getElement.value = this.booking[name];
+        }
+    }
+
+    getBooking() {
+        console.log(this.booking);
     }
 
 }

@@ -1,6 +1,4 @@
-<div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange" [ngStyle]="{height: '100px', backgroundColor: primaryColor}">
-    </div>
+<div class="wrapper mt-50px">
     <div class="bg-light">
         <div class="container">
             <div class="row">
@@ -24,13 +22,15 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
+                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="lastname">Last Name</label>
-                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name">
+                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -39,7 +39,7 @@
                                     <select class="form-control" id="gender">
                                         <option placeholder>Gender</option>
                                         <option>Male</option>
-                                        <option>Femail</option>
+                                        <option>Female</option>
                                     </select>
                                 </div>
                             </div>
@@ -57,34 +57,37 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="email">Email Address</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email Address">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>
-                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="next-name">Next of Kin's Name</label>
-                                    <input type="text" class="form-control" name="next-name" id="next-name" placeholder="Next of Kin's Name">
+                                    <label for="nextName">Next of Kin's Name</label>
+                                    <input type="text" class="form-control" name="nextName" id="nextName" placeholder="Next of Kin's Name"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="next-phone">Next of Kin's Phone Number</label>
-                                    <input type="text" class="form-control" name="next-phone" id="next-phone"
-                                        placeholder="Next of Kin's Phone Number">
+                                    <label for="nextPhone">Next of Kin's Phone Number</label>
+                                    <input type="text" class="form-control" name="nextPhone" id="nextPhone" placeholder="Next of Kin's Phone Number"
+                                        (input)="updateValue($event)">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 text-center">
-                                <button class="btn btn-primary">Make Payment</button>
+                                <button class="btn btn-primary" (click)="getBooking()">Make Payment</button>
                             </div>
                         </div>
 

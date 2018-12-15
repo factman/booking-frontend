@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { trigger, style, state, animate, transition } from '@angular/animations';
+import { BookingService } from 'app/views/booking.service';
 
 @Component({
     selector: 'app-schedule-bus',
@@ -9,11 +11,11 @@ import { trigger, style, state, animate, transition } from '@angular/animations'
         trigger('changeState', [
             state('fadeIn', style({
                 opacity: '1',
-                display: 'block'
+                display: 'block',
             })),
             state('fadeOut', style({
                 opacity: '0',
-                display: 'none'
+                display: 'none',
             })),
             transition('*=>fadeIn', animate('500ms')),
             transition('*=>fadeOut', animate('500ms'))
@@ -24,14 +26,17 @@ import { trigger, style, state, animate, transition } from '@angular/animations'
 export class ScheduleBusComponent implements OnInit {
     currentState = 'fadeIn';
 
-    constructor() { }
+    constructor(private router: Router, private booking: BookingService) { }
 
     ngOnInit() {
     }
 
     changeCurrentState() {
         this.currentState = this.currentState === 'fadeIn' ? 'fadeOut' : 'fadeIn';
-        console.log(this.currentState);
+    }
+
+    routeToPassagerDatails() {
+        this.router.navigate(['passager-details']);
     }
 
 }

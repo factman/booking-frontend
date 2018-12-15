@@ -14,8 +14,8 @@ import { PassagerDetailsComponent } from './views/passager-details/passager-deta
 import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
-    { path: 'index', component: MainComponent },
+    // { path: '', redirectTo: 'index', pathMatch: 'full' },
+    { path: '', component: MainComponent },
     { path: 'components', component: ComponentsComponent },
     { path: 'bus-selection', component: BusSelectionComponent },
     { path: 'passager-details', component: PassagerDetailsComponent },
@@ -33,6 +33,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes)
     ],
     exports: [
+        RouterModule,
     ],
 })
 export class AppRoutingModule { }

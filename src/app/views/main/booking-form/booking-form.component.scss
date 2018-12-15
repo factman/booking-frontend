@@ -45,3 +45,8 @@
     }
 }
 
+@media (max-width: 767px) {
+    .fd-column-reverse {
+        flex-direction: column-reverse;
+    }
+}
