@@ -1,6 +1,123 @@
+@mixin small {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin non-small {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+
 .fr{
     float:right;
 }
 .c-pointer{
     cursor: pointer;
+}
+
+thead tr{
+    @include small{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+}
+
+tr{
+    @include small{
+        border: 1px solid grey;
+    }
+}
+tbody td{ 
+    @include non-small{
+        display: table-cell !important;
+    }
+    @include small{
+        border: none;
+        border-bottom: 1px solid grey;
+        position: relative;
+    }
+    &:not(.actions-button){
+        @include small{
+            padding-left: 50% !important;
+        }
+    }
+    &:before{
+        @include small{
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+    }
+}
+
+table, thead, tbody, th, td, tr { 
+    @include small{
+        display: block;
+    }
+}
+tbody tr td{
+    &:first-child{
+        @include small{
+            background-color: grey;
+            color: #ffffff;
+        }
+    }
+}
+
+table{
+
+    td{
+        word-break : break-word;
+
+        &:nth-of-type(2):before { 
+            @include small{
+                content: "Terminal Name";
+                font-weight: bold;
+            }
+        }
+        &:nth-of-type(3):before { 
+            @include small{
+                content: "Terminal Address ";
+                font-weight: bold;
+            }
+        }
+        &:nth-of-type(4):before { 
+            @include small{
+                content: "Terminal Manager";
+                font-weight: bold;
+            }
+        }
+        &:nth-of-type(5):before { 
+            @include small{
+                content: "Terminal Phone";
+                font-weight: bold;
+            }
+        }
+    }
+
+    td.padding-top{
+        @include small{
+            padding-top: 30px;
+        }
+    }
+}
+
+tfoot{
+    @include small{
+        width: 100%;
+        display: block;
+    }
+    // display: table-footer-group;
+    td{
+        @include small{
+            width: 100%;
+        }
+    }
 }

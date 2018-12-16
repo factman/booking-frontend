@@ -8,7 +8,7 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="terminalPerPage">Terminals Per Page:</label>
                         <select class="form-control" id="terminalPerPage">
@@ -21,9 +21,9 @@
                         </select>
                     </div>
                 </div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="search">Search</label>
                         <input type="text" class="form-control" name="search" id="search" placeholder="Search" (input)="updateValue($event)">
@@ -55,7 +55,7 @@
                             <tr>
                                 <td colspan="5">
                                     <ngb-pagination [collectionSize]="collections" [(page)]="page" aria-label="Default pagination"
-                                        class="pagination-danger d-flex justify-content-end" (pageChange)="onPageChange($event)"
+                                        class="pagination-danger d-flex justify-content-center" (pageChange)="onPageChange($event)"
                                         [boundaryLinks]="true" [pageSize]="pageSize"></ngb-pagination>
                                 </td>
                             </tr>
