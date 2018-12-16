@@ -15,6 +15,7 @@ import { SuccessfulPaymantComponent } from './views/successful-paymant/successfu
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
+import { ContactUsComponent } from './views/contact-us/contact-us.component';
 
 const routes: Routes = [
     // { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
     { path: 'about-us', component: AboutUsComponent },
     { path: 'terminals', component: TerminalsComponent },
     { path: 'verify-booking', component: VerifyBookingComponent },
+    { path: 'contact-us', component: ContactUsComponent },
     // { path: 'nucleoicons', component: NucleoiconsComponent },
     // { path: 'examples/landing', component: LandingComponent },
     // { path: 'examples/login', component: LoginComponent },

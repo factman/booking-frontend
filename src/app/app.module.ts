@@ -22,6 +22,7 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.component';
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
+import { ContactUsComponent } from './views/contact-us/contact-us.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +39,7 @@ import { VerifyBookingComponent } from './views/verify-booking/verify-booking.co
         NoticeCardComponent,
         TerminalsComponent,
         VerifyBookingComponent,
+        ContactUsComponent,
     ],
     imports: [
         BrowserAnimationsModule,
