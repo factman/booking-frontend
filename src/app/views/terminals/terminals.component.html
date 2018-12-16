@@ -1,0 +1,68 @@
+<div class="wrapper mt-50px">
+    <div class="bg-light">
+        <div class="container">
+            <div class="row pt-30px">
+                <div class="col">
+                    <p class="display-4">OUR VARIOUS TERMINALS</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="terminalPerPage">Terminals Per Page:</label>
+                        <select class="form-control" id="terminalPerPage">
+                            <option placeholder>Terminals Per Page</option>
+                            <option value="0">All</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="search">Search</label>
+                        <input type="text" class="form-control" name="search" id="search" placeholder="Search" (input)="updateValue($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-30px">
+                <div class="col">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Terminal Name <span class="fa fa-sort fr c-pointer" (click)="orderByItem('name')"></span></th>
+                                <th>Terminal Address <span class="fa fa-sort fr c-pointer" (click)="orderByItem('address')"></span></th>
+                                <th>Terminal Manager <span class="fa fa-sort fr c-pointer" (click)="orderByItem('manager')"></span></th>
+                                <th>Terminal Phone <span class="fa fa-sort fr c-pointer" (click)="orderByItem('phone')"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let terminal of dataTerminals; let i = index">
+                                <td>{{(startPoint + 1) + i}}</td>
+                                <td>{{terminal.name}}</td>
+                                <td>{{terminal.address}}</td>
+                                <td>{{terminal.manager}}</td>
+                                <td>{{terminal.phone}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <ngb-pagination [collectionSize]="collections" [(page)]="page" aria-label="Default pagination"
+                                        class="pagination-danger d-flex justify-content-end" (pageChange)="onPageChange($event)"
+                                        [boundaryLinks]="true" [pageSize]="pageSize"></ngb-pagination>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

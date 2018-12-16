@@ -20,6 +20,7 @@ import { BookingService } from './views/booking.service';
 import { DataTargetDirective } from './views/data-target.directive';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.component';
+import { TerminalsComponent } from './views/terminals/terminals.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
         DataTargetDirective,
         AboutUsComponent,
         NoticeCardComponent,
+        TerminalsComponent,
     ],
     imports: [
         BrowserAnimationsModule,

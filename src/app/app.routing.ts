@@ -13,6 +13,7 @@ import { BusSelectionComponent } from './views/bus-selection/bus-selection.compo
 import { PassagerDetailsComponent } from './views/passager-details/passager-details.component';
 import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
+import { TerminalsComponent } from './views/terminals/terminals.component';
 
 const routes: Routes = [
     // { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'passager-details', component: PassagerDetailsComponent },
     { path: 'successful-payment', component: SuccessfulPaymantComponent },
     { path: 'about-us', component: AboutUsComponent },
+    { path: 'terminals', component: TerminalsComponent },
     { path: 'nucleoicons', component: NucleoiconsComponent },
     { path: 'examples/landing', component: LandingComponent },
     { path: 'examples/login', component: LoginComponent },

@@ -1,0 +1,192 @@
+export class DataTerminalService {
+    public terminals = [
+        {
+            name: 'BENIN',
+            address: 'No.117, Akpakpava Road by 2nd Junction, Benin City',
+            manager: 'Benin Manager',
+            phone: '08059041620',
+        },
+        {
+            name: 'ENUGU,ABAKPA',
+            address: 'Liberty Junction, by Ogwuago/Obinagu Road, Abakpa Nike, Enugu State',
+            manager: 'Abakpa Manager',
+            phone: '08056697088',
+        },
+        {
+            name: 'LAGOS,AJEGUNLE',
+            address: 'No.6, Achakpo Street, off Mba Street, Lagos State',
+            manager: 'Ajegunle Manager',
+            phone: '08056697070',
+        },
+        {
+            name: 'AKURE',
+            address: 'Ife-Ibadan Expressway Road-Block, Along Ife Road, Opp Swan Hotel, Akure.',
+            manager: 'Akure Manager',
+            phone: '08056697069',
+        },
+        {
+            name: 'LAGOS,IBAFO',
+            address: 'Near Ibafo Police Station, Opposite Internal Revenue, Ibafo, Ogun State',
+            manager: 'Ibafo Manager',
+            phone: '08056697049',
+        },
+        {
+            name: 'WARRI',
+            address: '118 Warri - Sapele Road, Off Airport Junction, By Orokodudu Junction',
+            manager: 'Warri Manager',
+            phone: '08056697041',
+        },
+        {
+            name: 'ABUJA,BWARI',
+            address: 'No.9, Sahagari Road, Opposite Market',
+            manager: 'Bwari Manager',
+            phone: '08056697034',
+        },
+        {
+            name: 'MINNA',
+            address: 'David Mark Road, Opp INEC Office, Niger State',
+            manager: 'Odo Fimber',
+            phone: '08056697027',
+        },
+        {
+            name: 'NNEWI',
+            address: 'No.4/5 Owerri Road, by Nwafor Orizu Roundabout',
+            manager: 'Nnewi Manager',
+            phone: '08056697009',
+        },
+        {
+            name: 'LAGOS,DEMOROSE',
+            address: 'No.106 Old Ojo Road, Near Agboju Market, Church Bus stop',
+            manager: 'Demorose Manager',
+            phone: '08056697004',
+        },
+        {
+            name: 'LAGOS,JIBOWU',
+            address: 'No.7, Ikorodu Road, by traffic Light, Opposite Chisco',
+            manager: 'Jibowu Manager',
+            phone: '08056697003',
+        },
+        {
+            name: 'LAGOS,IKORODU',
+            address: '9 Sagamu Road, Ikorodu, Lagos',
+            manager: 'Ikorodu Manager',
+            phone: '08056697002',
+        },
+        {
+            name: 'ABUJA,KUJE',
+            address: 'Gwagwalada Road, Near Secretariat Junction',
+            manager: 'Nweke Celestine',
+            phone: '08055091858',
+        },
+        {
+            name: 'YENEGOA',
+            address: '783, Okutukutu, Mbaiama, Yenegoa, Bayelsa',
+            manager: 'Yenegoa Manager',
+            phone: '08055091855',
+        },
+        {
+            name: 'IBADAN',
+            address: 'Samonda Old Airport, UI, Sango Road, Ibadan',
+            manager: 'Ibadan Manager',
+            phone: '08055091851',
+        },
+        {
+            name: 'ILORIN',
+            address: 'Old Jebba Road, Agric Area, Opp Kwara ADP, Along Sango, Ilorin.',
+            manager: 'Illorin Manager',
+            phone: '08055091849',
+        },
+        {
+            name: 'CALABAR',
+            address: 'No.56 Bedwell Street, Behind WATT Market, Calabar	',
+            manager: 'Calabar Manager',
+            phone: '08055091834',
+        },
+        {
+            name: 'ABUJA,GWAGWALADA',
+            address: 'Opposite Brifina Hotel, Gwagwalada, Abuja',
+            manager: 'Akor james',
+            phone: '08055091833',
+        },
+        {
+            name: 'ENUGU-EZIKE',
+            address: 'No.66, Umuida Road, Ogurute, Enugu-Ezike',
+            manager: 'Enugu-Ezike Manager',
+            phone: '08055091832',
+        },
+        {
+            name: 'ABUJA,ZUBA',
+            address: 'Near Fruit Market, Zuba',
+            manager: 'Okpe Uchenna',
+            phone: '08055091831',
+        },
+        {
+            name: 'ABUJA,KUBWA',
+            address: 'Opposite Kubwa Market',
+            manager: 'Kubwa Manager',
+            phone: '08055091830',
+        },
+        {
+            name: 'ABA',
+            address: 'No.13, Asa Road, Aba, Abia State',
+            manager: 'Aba Manager',
+            phone: '08055091828',
+        },
+        {
+            name: 'LAGOS,OJUELEGBA',
+            address: 'No.9/10 Western Avenue, Ojuelegba Roundabout, Opp. Abalti Baracks',
+            manager: 'Ojuelegba Manager',
+            phone: '08055091827',
+        },
+        {
+            name: 'ENUGU',
+            address: 'No.1 Christ Chemist Roundabout, Enugu',
+            manager: 'Enugu Manager',
+            phone: '08055091825',
+        },
+        {
+            name: 'OWERRI',
+            address: 'No.1 Living Christ Mission Avenue, Orji, Imo State',
+            manager: 'Owerri Manager',
+            phone: '08055091824',
+        },
+        {
+            name: 'ABUJA, MARARABA',
+            address: 'By last Bus stop, Keffi Road',
+            manager: 'Patience Ozuluigbo',
+            phone: '08055091822',
+        },
+        {
+            name: 'UMUAHIA',
+            address: 'No.2, Crowder Street, Umuhia, Abia State',
+            manager: 'Umuahia Manager',
+            phone: '08055091821',
+        },
+        {
+            name: 'PORTHARCOURT',
+            address: 'Opposite Bori Camp, Rumuola, Portharcourt',
+            manager: 'PortHarcourt Manager',
+            phone: '08055091820',
+        },
+        {
+            name: 'OBOLLO AFOR',
+            address: 'Makurdi Express Road, Obollo-Afor, Enugu State',
+            manager: 'Obollo-Afor Manager',
+            phone: '08055091819',
+        },
+        {
+            name: 'ONITSHA',
+            address: 'No.103, Oguta Road, Upper Iweka, Onitsha',
+            manager: 'Onitsha Manager',
+            phone: '08055091818',
+        },
+        {
+            name: 'NSUKKA',
+            address: 'No.64, Enugu Road, Nsukka',
+            manager: 'Nsukka Manager',
+            phone: '08055091817',
+        },
+    ]
+    constructor() { }
+
+}
