@@ -1,3 +1,35 @@
+@mixin small {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin non-small {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+.page-header{
+    height: 75vh;
+    @include small{
+        height: 50vh;
+    }
+    .container{
+        > .content-center{
+            top: 37%;
+        }
+    }
+
+    .category-absolute{
+        position: absolute;
+        top: 100vh;
+        margin-top: -60px;
+        padding: 0 15px;
+        width: 100%;
+        color: rgba(255,255,255,.5);
+    }
+}
 
 .step-number{
     display: inline-block;
@@ -8,7 +40,18 @@
     color: white;
     margin-top: -60px;
 }
+
 .step-wrapper{
     border: 1px solid orange;
     padding: 10px;
+}
+
+.dark-blue{
+    .step-number{
+        border-color: #050862;
+        background: #050862;
+    }
+    .step-wrapper{
+        border-color: #050862;
+    }
 }

@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-md-4">
                     <app-notice-card *ngFor="let sidebarContent of sidebarContents" [header]="sidebarContent.header"
-                        [content]="sidebarContent.content"></app-notice-card>
+                        [content]="sidebarContent.content" [defaultBorderTop]="sidebarContent.defaultBorderTop"></app-notice-card>
                 </div>
             </div>
         </div>

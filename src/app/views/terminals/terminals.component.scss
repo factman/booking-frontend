@@ -62,11 +62,37 @@ table, thead, tbody, th, td, tr {
         display: block;
     }
 }
-tbody tr td{
-    &:first-child{
-        @include small{
-            background-color: grey;
-            color: #ffffff;
+tbody {
+    tr {
+        &:nth-of-type(4n + 1){
+            td{
+                border: 1px solid rgb(248, 99, 49);
+                &:first-child{
+                    @include small{
+                        background-color: rgb(248, 99, 49);
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+        &:nth-of-type(4n + 3){
+            td{
+                border: 1px solid rgb(5, 8, 98);
+                &:first-child{
+                    @include small{
+                        background-color:rgb(5, 8, 98);
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+        td{
+            &:first-child{
+                @include small{
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
 }
@@ -120,4 +146,11 @@ tfoot{
             width: 100%;
         }
     }
+}
+tbody tr:nth-of-type(4n + 1){
+    background-color: rgba(248, 99, 49, 0.18);
+}
+
+tbody tr:nth-of-type(4n + 3){
+    background-color: rgba(5, 8, 98, 0.22);
 }

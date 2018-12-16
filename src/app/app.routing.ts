@@ -14,6 +14,7 @@ import { PassagerDetailsComponent } from './views/passager-details/passager-deta
 import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { TerminalsComponent } from './views/terminals/terminals.component';
+import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 
 const routes: Routes = [
     // { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -24,10 +25,11 @@ const routes: Routes = [
     { path: 'successful-payment', component: SuccessfulPaymantComponent },
     { path: 'about-us', component: AboutUsComponent },
     { path: 'terminals', component: TerminalsComponent },
-    { path: 'nucleoicons', component: NucleoiconsComponent },
-    { path: 'examples/landing', component: LandingComponent },
-    { path: 'examples/login', component: LoginComponent },
-    { path: 'examples/profile', component: ProfileComponent }
+    { path: 'verify-booking', component: VerifyBookingComponent },
+    // { path: 'nucleoicons', component: NucleoiconsComponent },
+    // { path: 'examples/landing', component: LandingComponent },
+    // { path: 'examples/login', component: LoginComponent },
+    // { path: 'examples/profile', component: ProfileComponent }
 ];
 
 @NgModule({
