@@ -1,2 +1,1 @@
-# bus-booking
-bus-booking app
+# bus-booking customer frontend
