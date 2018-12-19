@@ -1,0 +1,31 @@
+.padding-vertical {
+    padding-top: 50px;
+}
+
+.top-foot li {
+    background-color: #343a40;
+    color: rgba(211, 211, 211, 0.8);
+    border: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+.top-foot li a {
+    color: rgba(211, 211, 211, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-foot li a:hover {
+    color: rgb(9, 175, 255);
+    text-decoration: none;
+}
+
+.footer-divider {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.foot-social {
+    padding: 10px 15px;
+    font-size: 20px;
+}

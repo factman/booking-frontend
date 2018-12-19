@@ -1,11 +1,36 @@
 .form-wrapper{
-    border: 1px solid #e95e38;
-    margin-top: -7vh;
+    // border: 1px solid #f96332;
+    margin-top: -17.1vh;
     // min-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-top: 20px;
+    box-shadow: 0 20px 50px 0 rgba(9, 175, 255, 0.4);
 }
 
 .bg-orange{
-    background: #e95e38;
+    background: #f96332;
+}
+
+.icon {
+    font-size: 30px;
+    line-height: 2.7;
+    max-width: 80px;
+    text-align: center;
+    color: #888;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 9px 35px -6px rgba(0,0,0,.3);
+    background-color: #fff;
+    position: relative;
+    // padding-top: 5px;
+}
+
+.icon-primary {
+    box-shadow: 0 9px 30px -6px rgb(9, 175, 255);
+    color: rgb(9, 175, 255);
 }
 
 .pmarginless{
