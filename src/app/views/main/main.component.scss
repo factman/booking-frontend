@@ -1,3 +1,5 @@
+@import '../../../assets/sass/now-ui-kit/variables';
+
 @mixin small {
     @media screen and (max-width: 768px){
         @content;
@@ -46,26 +48,26 @@
 
 .step-number{
     display: inline-block;
-    border: 1px solid #f86331;
+    border: 1px solid $warning-color;
     padding: 20px;
     border-radius: 50%;
-    background: #f86331;
+    background: $warning-color;
     color: white;
     margin-top: -60px;
 }
 
 .step-wrapper{
-    border: 1px solid orange;
+    border: 1px solid $warning-color;
     padding: 10px;
 }
 
 .dark-blue{
     .step-number{
-        border-color: #050862;
-        background: #050862;
+        border-color: $primary-color;
+        background: $primary-color;
     }
     .step-wrapper{
-        border-color: #050862;
+        border-color: $primary-color;
     }
 }
 
@@ -87,27 +89,27 @@
 }
 
 .icon-primary {
-    box-shadow: 0 9px 30px -6px rgb(9, 175, 255);
-    color: rgb(9, 175, 255);
+    box-shadow: 0 9px 30px -6px $primary-color;
+    color: $primary-color;
 }
 
 .icon-warning {
-    box-shadow: 0 9px 30px -6px rgb(249, 99, 50);
-    color: rgb(249, 99, 50);
+    box-shadow: 0 9px 30px -6px $warning-color;
+    color: $warning-color
 }
 
 .icon-success {
-    box-shadow: 0 9px 30px -6px #18ce0f;
-    color: #18ce0f;
+    box-shadow: 0 9px 30px -6px $success-color;
+    color: $success-color;
 }
 
 .icon-info {
     box-shadow: 0 9px 30px -6px #2CA8FF;
-    color: #2CA8FF;
+    color: $info-color;
 }
 
 .info {
     .description {
-        color: rgba(0,0,0,.8) !important;
+        color: rgba(0,0,0,.6) !important;
     }
 }

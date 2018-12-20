@@ -1,3 +1,5 @@
+@import '../../../../assets/sass/now-ui-kit/variables';
+
 .form-wrapper{
     // border: 1px solid #f96332;
     margin-top: -17.1vh;
@@ -5,11 +7,11 @@
     border-radius: 5px;
     overflow: hidden;
     padding-top: 20px;
-    box-shadow: 0 20px 50px 0 rgba(9, 175, 255, 0.4);
+    box-shadow: 0 20px 50px 0 $warning-color-alert;
 }
 
 .bg-orange{
-    background: #f96332;
+    background: $warning-color;
 }
 
 .icon {
@@ -29,8 +31,8 @@
 }
 
 .icon-primary {
-    box-shadow: 0 9px 30px -6px rgb(9, 175, 255);
-    color: rgb(9, 175, 255);
+    box-shadow: 0 9px 30px -6px $warning-color;
+    color: $warning-color;
 }
 
 .pmarginless{
@@ -53,8 +55,8 @@
     text-align: center;
     .trip-type{
         background: #ffffff;
-        color: #e95e38;
-        border: 1px solid #e95e38;
+        color: $warning-color;
+        border: 1px solid $warning-color;
         display: inline-block;
         margin: 10px;
         div {
@@ -64,7 +66,7 @@
 
         }
         div.active{
-            background: #e95e38;
+            background: $warning-color;
             color: #ffffff;
         }
     }
