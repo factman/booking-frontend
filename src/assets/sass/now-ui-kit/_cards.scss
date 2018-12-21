@@ -96,3 +96,15 @@
         padding-right: 0;
     }
 }
+
+.card-image {
+    padding: 14px 0px 14px 14px;
+    .img {
+        margin: auto;
+        display: block;
+    }
+}
+
+.card-description {
+    color: rgba(0, 0, 0, 0.8) !important;
+}

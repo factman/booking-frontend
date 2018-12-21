@@ -1,10 +1,30 @@
 <div class="wrapper mt-50px">
-    <div class="bg-light">
+    <div class="page-header clear-filter" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('assets/img/Peace-Masst-Transit-PMT-my1.jpg');">
+
+        </div>
         <div class="container">
-            <div class="row pt-30px">
-                <div class="col-md-8">
-                    <p class="display-4">About PMT</p>
-                    <p class="text-justify fs-18px">PMT is A Trusted Name in Transportation for 20 Years. PMT provides
+            <div class="content-center brand">
+                <h1 class="display-2">About PMT</h1>
+                <h3>PMT is A Trusted Name in Transportation for 20 Years.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="container full-section">
+            <div class="row">
+                <div class="col-sm-12 intro">
+                    <h2>Our Core Values @ PMT</h2>
+                </div>
+                <app-notice-card class="col-md-{{columns}}" *ngFor="let sidebarContent of sidebarContents"
+                    [sidebarContent]="sidebarContent"></app-notice-card>
+            </div>
+        </div>
+        <div class="container full-section">
+            <div class="row">
+                <div class="col-sm-12 intro">
+                    <h2>Who We Are @ PMT</h2>
+                    <p>PMT is A Trusted Name in Transportation for 20 Years. PMT provides
                         transportation services for inter city/states
                         travelers in Nigeria. PMT customers can enjoy: air conditioned vehicles and light
                         entertainment. Peace Mass Transit Ltd
@@ -13,7 +33,15 @@
                         and duration at a very affordable cost. PMT also provides haulage services for businesses and
                         individual looking to
                         transport large goods and services or materials within and around Nigerian cities.</p>
-                    <p class="text-justify fs-18px">Our mission is to provide an affordable and reliable transport
+                </div>
+            </div>
+        </div>
+        <app-partners></app-partners>
+        <div class="container full-section">
+            <div class="row">
+                <div class="col-sm-12 intro">
+                    <h2>Our Mission @ PMT</h2>
+                    <p>Our mission is to provide an affordable and reliable transport
                         system for
                         our people, and our vision is to use all
                         available resources to become the largest and most efficient road transport corporation world
@@ -21,7 +49,14 @@
                         strength and strategy is founded on the guidance of the Holy Spirit, so for all our past, our
                         present and our future
                         achievements we say TO GOD BE THE GLORY.</p>
-                    <p class="text-justify fs-18px">Hence our belief that our growth from two buses to two thousand
+                </div>
+            </div>
+        </div>
+        <div class="container full-section">
+            <div class="row">
+                <div class="col-sm-12 intro">
+                    <h2>Our Belief @ PMT</h2>
+                    <p>Hence our belief that our growth from two buses to two thousand
                         buses in
                         fourteen years without any outside help is
                         made possible by God who for His own reasons chose to use us for this miracle. We are the David
@@ -33,18 +68,12 @@
                         President and CIC of the Federal Republic of Nigeria which in our opinion, is in recognition of
                         the positive impact of
                         our company in the economic growth of our country.</p>
-                    <p class="text-justify fs-18px">
-                        To God be the Glory<br>
+                    <p>To God be the Glory<br>
                         Peace Group Nigeria started from a humble beginning back in 1994 with two Hiace buses.
                         Commenced business as a
                         Transport company, Peace Mass Transit Company which has now transformed to be one of Nigeria´s
                         leading mini bus
-                        Services Company, moving about 30,000 passengers daily.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <app-notice-card *ngFor="let sidebarContent of sidebarContents" [header]="sidebarContent.header"
-                        [content]="sidebarContent.content" [defaultBorderTop]="sidebarContent.defaultBorderTop"></app-notice-card>
+                        Services Company, moving about 30,000 passengers daily.</p>
                 </div>
             </div>
         </div>

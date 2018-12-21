@@ -23,6 +23,7 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
+import { PartnersComponent } from './views/about-us/partners/partners.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component';
         TerminalsComponent,
         VerifyBookingComponent,
         ContactUsComponent,
+        PartnersComponent,
     ],
     imports: [
         BrowserAnimationsModule,

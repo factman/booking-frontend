@@ -1,15 +1,7 @@
-<div class="passager-detail{{customClass}}">
-    <div class="row">
-        <div class="col">
-            <h4 class="marginless text-center pt-10px">{{header}}</h4>
-        </div>
+<div class="info info-hover">
+    <div class="icon icon-{{sidebarContent.color}}">
+        <i class="now-ui-icons {{sidebarContent.icon}}"></i>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-xs-12 plr-30px">
-            <p class="text-justify fs-15px">
-                {{content}}
-            </p>
-        </div>
-    </div>
+    <h4 class="info-title text-center text-{{sidebarContent.color}}">{{sidebarContent.header}}</h4>
+    <p class="description text-center">{{sidebarContent.content}}</p>
 </div>

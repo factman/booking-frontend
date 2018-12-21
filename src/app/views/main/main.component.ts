@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, Renderer, Inject, ElementRef } from '@angular/core';
 import * as Rellax from 'rellax';
 import { DOCUMENT } from '@angular/platform-browser';
+import 'rxjs/add/operator/filter';
 import { Location } from '@angular/common';
 import AOS from 'aos';
 import { TerminalService } from './terminal.service';
-import 'rxjs/add/operator/filter';
 
 
 
