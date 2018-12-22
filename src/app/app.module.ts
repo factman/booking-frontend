@@ -2,6 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 // import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -23,6 +24,7 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
+import { AjaxService } from './ajax.service';
 
 @NgModule({
     declarations: [
@@ -49,10 +51,12 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component';
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
-        MainModule
+        MainModule,
+        HttpModule,
     ],
     providers: [
         BookingService,
+        AjaxService,
     ],
     bootstrap: [AppComponent]
 })

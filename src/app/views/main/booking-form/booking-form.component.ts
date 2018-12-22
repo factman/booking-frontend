@@ -6,6 +6,7 @@ import Choices from 'choices.js';
 import { CustomDate } from './customdate.model'
 import { TerminalService } from '../terminal.service';
 import { BookingService } from 'app/views/booking.service';
+import { AjaxService } from 'app/ajax.service';
 
 @Component({
     selector: 'app-booking-form',
@@ -15,12 +16,16 @@ import { BookingService } from 'app/views/booking.service';
 })
 export class BookingFormComponent implements OnInit {
     departure = new CustomDate();
+    choicesFrom: any;
+    choicesTo: any;
+    dataTerminals: any[];
     constructor(
         config: NgbDatepickerConfig,
         calendar: NgbCalendar,
         private terminal: TerminalService,
         private booking: BookingService,
-        private router: Router
+        private router: Router,
+        private ajaxService: AjaxService
     ) {
 
         config.minDate = { year: 1900, month: 1, day: 1 };
@@ -55,6 +60,7 @@ export class BookingFormComponent implements OnInit {
     }
 
     ngOnInit() {
+
         this.initialSelectFields();
         // this.onClickTripType();
     }
@@ -63,18 +69,20 @@ export class BookingFormComponent implements OnInit {
         const travellingFrom = document.getElementById('travellingFrom');
         const travellingTo = document.getElementById('travellingTo');
         const adult = document.getElementById('adult');
-        const choicesFrom = new Choices(travellingFrom);
+        this.choicesFrom = new Choices(travellingFrom, {
+            placeholderValue: 'Select Departure'
+        });
         const choicesAdult = new Choices(adult);
-        const choicesTo = new Choices(travellingTo);
-        choicesFrom.setChoices(this.terminal.data, 'value', 'label', false);
-        choicesTo.setChoices(this.terminal.data, 'value', 'label', false);
+        this.choicesTo = new Choices(travellingTo, {
+            placeholderValue: 'Select Destination'
+        });
 
         if (this.booking.departure !== undefined) {
-            choicesFrom.setChoiceByValue(this.booking.departure)
+            this.choicesFrom.setChoiceByValue(this.booking.departure)
         }
 
         if (this.booking.destination !== undefined) {
-            choicesTo.setChoiceByValue(this.booking.destination)
+            this.choicesTo.setChoiceByValue(this.booking.destination)
         }
 
         if (this.booking.numberOfBooking !== undefined) {
@@ -84,6 +92,19 @@ export class BookingFormComponent implements OnInit {
         if (this.booking.dateBooked.year !== null) {
             this.departure = this.booking.dateBooked;
         }
+
+        this.ajaxService.getData('https://jibrila.herokuapp.com/api/pmt-booking/terminals')
+            .subscribe((response: any) => {
+                console.log(response);
+                this.dataTerminals = response.payload.map(
+                    // tslint:disable-next-line:no-shadowed-variable
+                    (terminal: any) => ({ label: `${terminal.name}, ${terminal.city}`, value: `${terminal.id}` }
+                    ));
+                if (this.dataTerminals.length > 0) {
+                    this.choicesFrom.setChoices(this.dataTerminals, 'value', 'label', false);
+                    this.choicesTo.setChoices(this.dataTerminals, 'value', 'label', false);
+                }
+            })
 
 
 
@@ -123,7 +144,13 @@ export class BookingFormComponent implements OnInit {
     // }
 
     onSubmit() {
-        if (this.departure.year !== null) {
+        console.log(isNaN(+this.booking.destination), +this.booking.destination)
+        if (
+            this.departure.year !== null
+            && !isNaN(+this.booking.departure)
+            && !isNaN(+this.booking.destination)
+            && !isNaN(+this.booking.numberOfBooking)
+        ) {
             this.booking.dateBooked = this.departure
             this.router.navigate(['bus-selection']);
         }
