@@ -28,9 +28,9 @@ const routes: Routes = [
     { path: 'terminals', component: TerminalsComponent },
     { path: 'verify-booking', component: VerifyBookingComponent },
     { path: 'contact-us', component: ContactUsComponent },
+    { path: 'login', component: LoginComponent },
     // { path: 'nucleoicons', component: NucleoiconsComponent },
     // { path: 'examples/landing', component: LandingComponent },
-    // { path: 'examples/login', component: LoginComponent },
     // { path: 'examples/profile', component: ProfileComponent }
 ];
 
