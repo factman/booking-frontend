@@ -24,6 +24,7 @@ import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
 import { PartnersComponent } from './views/about-us/partners/partners.component';
+import { LoginModalComponent } from './views/login-modal/login-modal.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { PartnersComponent } from './views/about-us/partners/partners.component'
         VerifyBookingComponent,
         ContactUsComponent,
         PartnersComponent,
+        LoginModalComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -56,6 +58,9 @@ import { PartnersComponent } from './views/about-us/partners/partners.component'
     providers: [
         BookingService,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent,
+    ],
+
 })
 export class AppModule { }
