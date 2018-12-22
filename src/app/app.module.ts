@@ -24,15 +24,9 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
-<<<<<<< HEAD
 import { AjaxService } from './ajax.service';
-=======
 import { PartnersComponent } from './views/about-us/partners/partners.component';
-<<<<<<< HEAD
->>>>>>> b5e2b1eb0780f50ec761e328726628b821652e87
-=======
 import { LoginModalComponent } from './views/login-modal/login-modal.component';
->>>>>>> 59370cff7743680d9fe280a58e8048b6518e5caa
 
 @NgModule({
     declarations: [
@@ -68,9 +62,6 @@ import { LoginModalComponent } from './views/login-modal/login-modal.component';
         BookingService,
         AjaxService,
     ],
-    bootstrap: [
-        AppComponent,
-    ],
-
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
