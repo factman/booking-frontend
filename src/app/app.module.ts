@@ -28,7 +28,11 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component';
 import { AjaxService } from './ajax.service';
 =======
 import { PartnersComponent } from './views/about-us/partners/partners.component';
+<<<<<<< HEAD
 >>>>>>> b5e2b1eb0780f50ec761e328726628b821652e87
+=======
+import { LoginModalComponent } from './views/login-modal/login-modal.component';
+>>>>>>> 59370cff7743680d9fe280a58e8048b6518e5caa
 
 @NgModule({
     declarations: [
@@ -47,6 +51,7 @@ import { PartnersComponent } from './views/about-us/partners/partners.component'
         VerifyBookingComponent,
         ContactUsComponent,
         PartnersComponent,
+        LoginModalComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -63,6 +68,9 @@ import { PartnersComponent } from './views/about-us/partners/partners.component'
         BookingService,
         AjaxService,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent,
+    ],
+
 })
 export class AppModule { }
