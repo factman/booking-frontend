@@ -7,16 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NoticeCardComponent implements OnInit {
 
-    @Input() header: string;
-    @Input() content: string;
-    @Input() defaultBorderTop: boolean;
-    customClass = '';
+    @Input() sidebarContent: Object;
+    // customClass = '';
 
     constructor() { }
 
     ngOnInit() {
-        this.customClass = this.defaultBorderTop === false ? ' btc-dark-blue' : '';
-        console.log(this.customClass)
+        // this.customClass = this.defaultBorderTop === false ? ' btc-dark-blue' : '';
+        // console.log(this.customClass)
     }
 
 }

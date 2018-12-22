@@ -24,7 +24,11 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
+<<<<<<< HEAD
 import { AjaxService } from './ajax.service';
+=======
+import { PartnersComponent } from './views/about-us/partners/partners.component';
+>>>>>>> b5e2b1eb0780f50ec761e328726628b821652e87
 
 @NgModule({
     declarations: [
@@ -42,6 +46,7 @@ import { AjaxService } from './ajax.service';
         TerminalsComponent,
         VerifyBookingComponent,
         ContactUsComponent,
+        PartnersComponent,
     ],
     imports: [
         BrowserAnimationsModule,

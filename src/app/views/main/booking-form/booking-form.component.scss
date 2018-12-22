@@ -4,10 +4,15 @@
     // border: 1px solid #f96332;
     margin-top: -17.1vh;
     // min-height: 300px;
+<<<<<<< HEAD
     border-radius: 5px;
     // overflow: hidden;
+=======
+    border-radius: $border-radius-large;
+>>>>>>> b5e2b1eb0780f50ec761e328726628b821652e87
     padding-top: 20px;
-    box-shadow: 0 20px 50px 0 $warning-color-alert;
+    padding-bottom: 20px;
+    box-shadow: 0 20px 40px 5px $warning-color-opacity;
 }
 
 .bg-orange{
@@ -24,14 +29,14 @@
     height: 80px;
     margin: 0 auto;
     border-radius: 50%;
-    box-shadow: 0 9px 35px -6px rgba(0,0,0,.3);
+    box-shadow: 0 10px 40px -6px rgba(0,0,0,.3);
     background-color: #fff;
     position: relative;
     // padding-top: 5px;
 }
 
 .icon-primary {
-    box-shadow: 0 9px 30px -6px $warning-color;
+    box-shadow: 0 10px 40px -6px $warning-color;
     color: $warning-color;
 }
 
