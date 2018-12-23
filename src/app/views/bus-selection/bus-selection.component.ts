@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AjaxService } from 'app/ajax.service';
 import { Response } from '@angular/http';
+import { getLocalStorage, getStringDate } from '../../helpers/logic';
 
 @Component({
     selector: 'app-bus-selection',
@@ -14,8 +15,11 @@ export class BusSelectionComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        const { dateDeparture, travellingFrom, travellingTo } = getLocalStorage('bookingPhaseOne');
         this.ajaxService.getData(
-            'https://jibrila.herokuapp.com/api/pmt-booking/schedules?departure_time=2018-12-25&terminal1_id=4&terminal2_id=7'
+            // tslint:disable-next-line:max-line-length
+            'https://jibrila.herokuapp.com/api/pmt-booking/schedules?departure_time=2018-12-25&terminal1_id=15&terminal2_id=33&seat_quantity=2'
+            // `https://jibrila.herokuapp.com/api/pmt-booking/schedules?departure_time=${getStringDate(dateDeparture)}&terminal1_id=${travellingFrom}&terminal2_id=${travellingTo}`
         )
             .subscribe(
                 (response: Response) => console.log(response),

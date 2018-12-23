@@ -1,8 +1,8 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -51,6 +51,7 @@ import { LoginModalComponent } from './views/login-modal/login-modal.component';
         BrowserAnimationsModule,
         NgbModule.forRoot(),
         FormsModule,
+        ReactiveFormsModule,
         // RouterModule,
         AppRoutingModule,
         ComponentsModule,

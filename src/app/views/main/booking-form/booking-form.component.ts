@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbDatepickerConfig, NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import Choices from 'choices.js';
 import { CustomDate } from './customdate.model'
 import { TerminalService } from '../terminal.service';
 import { BookingService } from 'app/views/booking.service';
 import { AjaxService } from 'app/ajax.service';
+import { setLocalStorage } from '../../../helpers/logic';
 
 @Component({
     selector: 'app-booking-form',
@@ -14,11 +16,14 @@ import { AjaxService } from 'app/ajax.service';
     styleUrls: ['./booking-form.component.scss'],
     providers: [NgbDatepickerConfig]
 })
-export class BookingFormComponent implements OnInit {
+export class BookingFormComponent implements OnInit, OnDestroy {
     departure = new CustomDate();
     choicesFrom: any;
     choicesTo: any;
     dataTerminals: any[];
+    bookingForm: FormGroup;
+    getBookingForm: {};
+
     constructor(
         config: NgbDatepickerConfig,
         calendar: NgbCalendar,
@@ -63,6 +68,12 @@ export class BookingFormComponent implements OnInit {
 
         this.initialSelectFields();
         // this.onClickTripType();
+        this.bookingForm = new FormGroup({
+            'travellingFrom': new FormControl(null, [Validators.required]),
+            'travellingTo': new FormControl(null, [Validators.required]),
+            'dateDeparture': new FormControl(null, [Validators.required]),
+            'adult': new FormControl(null, [Validators.required])
+        });
     }
 
     initialSelectFields() {
@@ -95,7 +106,6 @@ export class BookingFormComponent implements OnInit {
 
         this.ajaxService.getData('https://jibrila.herokuapp.com/api/pmt-booking/terminals')
             .subscribe((response: any) => {
-                console.log(response);
                 this.dataTerminals = response.payload.map(
                     // tslint:disable-next-line:no-shadowed-variable
                     (terminal: any) => ({ label: `${terminal.name}, ${terminal.city}`, value: `${terminal.id}` }
@@ -113,6 +123,9 @@ export class BookingFormComponent implements OnInit {
             // do something creative here...
             this.booking.departure = (<CustomEvent>event).detail.value;
 
+        }, false)
+        travellingFrom.addEventListener('showDropdown', () => {
+            this.bookingForm.get('travellingFrom').markAsTouched();
         }, false);
 
         travellingTo.addEventListener('addItem', (event) => {
@@ -120,40 +133,34 @@ export class BookingFormComponent implements OnInit {
             this.booking.destination = (<CustomEvent>event).detail.value;
         }, false);
 
+        travellingTo.addEventListener('showDropdown', () => {
+            this.bookingForm.get('travellingTo').markAsTouched();
+        }, false);
+
         adult.addEventListener('addItem', (event) => {
             // do something creative here...
             this.booking.numberOfBooking = parseInt((<CustomEvent>event).detail.value, 10);
         }, false);
+
+        adult.addEventListener('showDropdown', () => {
+            this.bookingForm.get('adult').markAsTouched();
+        }, false);
     }
 
-    // onClickTripType() {
-    //     const trips = document.querySelectorAll('.trip');
-    //     (<any>trips).forEach(trip => {
-    //         (<HTMLElement>trip).addEventListener('click', (e) => {
-    //             const currentTrip = (<HTMLElement>e.target);
-    //             this.booking.trip = currentTrip.textContent;
-    //             this.arrivalStatus = currentTrip.textContent.toLowerCase() === 'round trip';
-    //             currentTrip.classList.add('active');
-    //             if (currentTrip.nextElementSibling) {
-    //                 (<HTMLElement>currentTrip.nextElementSibling).classList.remove('active');
-    //             } else {
-    //                 (<HTMLElement>currentTrip.previousElementSibling).classList.remove('active');
-    //             }
-    //         })
-    //     })
-    // }
-
     onSubmit() {
-        console.log(isNaN(+this.booking.destination), +this.booking.destination)
-        if (
-            this.departure.year !== null
-            && !isNaN(+this.booking.departure)
-            && !isNaN(+this.booking.destination)
-            && !isNaN(+this.booking.numberOfBooking)
-        ) {
-            this.booking.dateBooked = this.departure
-            this.router.navigate(['bus-selection']);
+        this.booking.dateBooked = this.departure
+        this.router.navigate(['bus-selection']);
+        console.log(this.bookingForm);
+    }
+
+    ngOnDestroy() {
+        this.getBookingForm = {
+            travellingFrom: this.bookingForm.value.travellingFrom,
+            travellingTo: this.bookingForm.value.travellingTo,
+            adult: this.bookingForm.value.adult,
+            dateDeparture: this.bookingForm.value.dateDeparture,
         }
+        setLocalStorage('bookingPhaseOne', this.getBookingForm);
     }
 
 

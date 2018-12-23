@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable()
 
 export class AjaxService {
-
+    counterMonitor = 0;
     constructor(private http: Http) { }
 
     getData(url) {
@@ -13,6 +13,7 @@ export class AjaxService {
             .pipe(
                 map((res: Response) => {
                     try {
+                        this.counterMonitor = 0;
                         return res.json();
                     } catch {
                         return throwError({
@@ -21,7 +22,13 @@ export class AjaxService {
                         });
                     }
                 }),
-                catchError((res: Response) => this.onError(res))
+                catchError((res: Response) => {
+                    if (this.counterMonitor <= 5) {
+                        this.counterMonitor += 1;
+                        return this.getData(url);
+                    }
+                    return this.onError(res);
+                })
             );
     }
 
