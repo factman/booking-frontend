@@ -9,16 +9,22 @@ import { BookingService } from 'app/views/booking.service';
 export class SeatsComponent implements OnInit {
     seatNumberSet = new Set();
     @Output() seatEvent = new EventEmitter<{}>();
+    @Input() occupiedSeats = [];
+    @Input() seaters: number;
+    @Input() numberOfSeatBooked: number;
     currentSeat: string;
+    numberOfSeats = [];
     constructor(private booking: BookingService) { }
 
     ngOnInit() {
+        console.log(this.occupiedSeats);
+        this.numberOfSeats = this.range(1, this.seaters);
     }
 
     getSeatNumber(event) {
         this.currentSeat = event.target.innerText.trim();
         const currentSeatSelector = document.querySelector('[data-seat="' + this.currentSeat + '"]');
-        if ((this.seatNumberSet.size < this.booking.numberOfBooking) || currentSeatSelector.className.includes('active')) {
+        if ((this.seatNumberSet.size < this.numberOfSeatBooked) || currentSeatSelector.className.includes('active')) {
             this.seatNumberSet.add(this.currentSeat);
             this.crossBrowserToggleClass(currentSeatSelector, 'active');
         }
@@ -51,6 +57,10 @@ export class SeatsComponent implements OnInit {
             }
             element.className = classes.join(' ');
         }
+    }
+
+    range(start, end) {
+        return (new Array(end - start + 1)).fill(undefined).map((_, i) => i + start);
     }
 
 }

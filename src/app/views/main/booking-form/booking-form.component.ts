@@ -8,7 +8,8 @@ import { CustomDate } from './customdate.model'
 import { TerminalService } from '../terminal.service';
 import { BookingService } from 'app/views/booking.service';
 import { AjaxService } from 'app/ajax.service';
-import { setLocalStorage } from '../../../helpers/logic';
+import { setLocalStorage, getLocalStorage } from '../../../helpers/logic';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-booking-form',
@@ -23,6 +24,10 @@ export class BookingFormComponent implements OnInit, OnDestroy {
     dataTerminals: any[];
     bookingForm: FormGroup;
     getBookingForm: {};
+    initiateTerminals: Subscription;
+    formStatus = false;
+    departureLabel: string;
+    arrivalLabel: string;
 
     constructor(
         config: NgbDatepickerConfig,
@@ -87,24 +92,9 @@ export class BookingFormComponent implements OnInit, OnDestroy {
         this.choicesTo = new Choices(travellingTo, {
             placeholderValue: 'Select Destination'
         });
+        const bookingPhaseOne = getLocalStorage('bookingPhaseOne');
 
-        if (this.booking.departure !== undefined) {
-            this.choicesFrom.setChoiceByValue(this.booking.departure)
-        }
-
-        if (this.booking.destination !== undefined) {
-            this.choicesTo.setChoiceByValue(this.booking.destination)
-        }
-
-        if (this.booking.numberOfBooking !== undefined) {
-            choicesAdult.setChoiceByValue(`${this.booking.numberOfBooking}`)
-        }
-
-        if (this.booking.dateBooked.year !== null) {
-            this.departure = this.booking.dateBooked;
-        }
-
-        this.ajaxService.getData('https://jibrila.herokuapp.com/api/pmt-booking/terminals')
+        this.initiateTerminals = this.ajaxService.getData('https://jibrila.herokuapp.com/api/pmt-booking/terminals')
             .subscribe((response: any) => {
                 this.dataTerminals = response.payload.map(
                     // tslint:disable-next-line:no-shadowed-variable
@@ -113,6 +103,19 @@ export class BookingFormComponent implements OnInit, OnDestroy {
                 if (this.dataTerminals.length > 0) {
                     this.choicesFrom.setChoices(this.dataTerminals, 'value', 'label', false);
                     this.choicesTo.setChoices(this.dataTerminals, 'value', 'label', false);
+                    // if (bookingPhaseOne) {
+                    //     console.log(bookingPhaseOne);
+                    //     this.choicesFrom.setChoiceByValue(bookingPhaseOne.travellingFrom)
+                    //     this.choicesTo.setChoiceByValue(bookingPhaseOne.travellingTo)
+                    //     choicesAdult.setChoiceByValue(`${bookingPhaseOne.adult}`)
+                    //     this.bookingForm.get('dateDeparture').setValue(bookingPhaseOne.dateDeparture);
+                    //     this.formStatus = true;
+                    //     this.bookingForm.get('travellingFrom').setErrors({ 'required': false });
+                    //     this.bookingForm.get('travellingTo').setErrors({ 'required': false });
+                    //     this.bookingForm.get('dateDeparture').setErrors({ 'required': false });
+                    //     this.bookingForm.get('adult').setErrors({ 'required': false });
+
+                    // }
                 }
             })
 
@@ -122,6 +125,7 @@ export class BookingFormComponent implements OnInit, OnDestroy {
         travellingFrom.addEventListener('addItem', (event) => {
             // do something creative here...
             this.booking.departure = (<CustomEvent>event).detail.value;
+            this.departureLabel = (<CustomEvent>event).detail.label;
 
         }, false)
         travellingFrom.addEventListener('showDropdown', () => {
@@ -131,6 +135,7 @@ export class BookingFormComponent implements OnInit, OnDestroy {
         travellingTo.addEventListener('addItem', (event) => {
             // do something creative here...
             this.booking.destination = (<CustomEvent>event).detail.value;
+            this.arrivalLabel = (<CustomEvent>event).detail.label;
         }, false);
 
         travellingTo.addEventListener('showDropdown', () => {
@@ -148,19 +153,23 @@ export class BookingFormComponent implements OnInit, OnDestroy {
     }
 
     onSubmit() {
-        this.booking.dateBooked = this.departure
+        this.booking.dateBooked = this.departure;
         this.router.navigate(['bus-selection']);
         console.log(this.bookingForm);
     }
 
     ngOnDestroy() {
-        this.getBookingForm = {
-            travellingFrom: this.bookingForm.value.travellingFrom,
-            travellingTo: this.bookingForm.value.travellingTo,
-            adult: this.bookingForm.value.adult,
-            dateDeparture: this.bookingForm.value.dateDeparture,
+        this.initiateTerminals.unsubscribe();
+        if (this.bookingForm.valid) {
+            this.getBookingForm = {
+                travellingFrom: this.bookingForm.value.travellingFrom,
+                travellingTo: this.bookingForm.value.travellingTo,
+                adult: this.bookingForm.value.adult,
+                dateDeparture: this.bookingForm.value.dateDeparture,
+                route: `${this.departureLabel} ==> ${this.arrivalLabel}`
+            }
+            setLocalStorage('bookingPhaseOne', this.getBookingForm);
         }
-        setLocalStorage('bookingPhaseOne', this.getBookingForm);
     }
 
 

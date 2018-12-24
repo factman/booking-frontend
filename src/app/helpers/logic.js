@@ -7,11 +7,15 @@ export function setLocalStorage(name, value) {
 }
 
 export function getLocalStorage(name) {
-    const getItem = window.localStorage.getItem(name)
-    try {
-        return JSON.parse(getItem);
-    } catch (e) {
-        return getItem;
+    if (propsExist(name, window.localStorage)) {
+        const getItem = window.localStorage.getItem(name)
+        try {
+            return JSON.parse(getItem);
+        } catch (e) {
+            return getItem;
+        }
+    } else {
+        return false;
     }
 }
 

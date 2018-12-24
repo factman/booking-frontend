@@ -8,7 +8,6 @@
             </div>
         </div>
         <hr>
-        <app-schedule-bus></app-schedule-bus>
-        <app-schedule-bus></app-schedule-bus>
+        <app-schedule-bus *ngFor="let scheduleBus of scheduleBuses;" [scheduleBus]="scheduleBus"></app-schedule-bus>
     </div>
 </div>
