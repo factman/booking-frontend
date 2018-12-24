@@ -5,10 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './views/main/main.component';
 import { ComponentsComponent } from './components/components.component';
-import { LandingComponent } from './examples/landing/landing.component';
+// import { LandingComponent } from './examples/landing/landing.component';
 import { LoginComponent } from './examples/login/login.component';
-import { ProfileComponent } from './examples/profile/profile.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
+// import { ProfileComponent } from './examples/profile/profile.component';
+// import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { BusSelectionComponent } from './views/bus-selection/bus-selection.component';
 import { PassagerDetailsComponent } from './views/passager-details/passager-details.component';
 import { SuccessfulPaymantComponent } from './views/successful-paymant/successful-paymant.component';

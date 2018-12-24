@@ -12,6 +12,14 @@
     color:#ffffff;
 }
 
+.seat-number.occupied{
+    background-color: #260067;
+    color: #fff;
+    border: 1px solid #260067;
+    /* pointer-events: none; */
+    cursor: none;
+}
+
 
 .no-select{
     -webkit-touch-callout: none; /* iOS Safari */

@@ -5,7 +5,6 @@
                 <p class="display-4">BOOK AVAILABILITY</p>
             </div>
         </div>
-        <app-schedule-bus></app-schedule-bus>
-        <app-schedule-bus></app-schedule-bus>
+        <app-schedule-bus *ngFor="let scheduleBus of scheduleBuses;" [scheduleBus]="scheduleBus"></app-schedule-bus>
     </div>
 </div>

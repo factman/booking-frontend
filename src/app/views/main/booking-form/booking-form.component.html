@@ -8,56 +8,81 @@
         </div>
     </div>
     <div class="form-content bg-white padding-20">
-        <div class="row">
-            <!-- <div class="col-sm-12">
-                                <div class="trip-type-wrapper">
-                                    <div class="trip-type">
-                                        <div class="trip one-way noselect active">One Way</div>
-                                        <div class="trip round-trip noselect">Round Trip</div>
+        <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <!-- <div class="col-sm-12">
+                                    <div class="trip-type-wrapper">
+                                        <div class="trip-type">
+                                            <div class="trip one-way noselect active">One Way</div>
+                                            <div class="trip round-trip noselect">Round Trip</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div> -->
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="travellingFrom">Travelling from:</label>
-                    <select class="form-control" id="travellingFrom">
-                        <option placeholder>Departure Terminal</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="travellingTo">Travelling To:</label>
-                    <select class="form-control" id="travellingTo">
-                        <option placeholder>Select Destination</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="datepicker-container">
+                                </div> -->
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="dateDeparture">Departure Date:</label>
-                        <input class="form-control datetimepicker" id="dateDeparture" placeholder="2018-12-14" name="dp"
-                            [(ngModel)]="departure" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                        <label for="travellingFrom">Travelling from:</label>
+                        <select class="form-control" id="travellingFrom" formControlName="travellingFrom">
+                            <option disabled="disabled" placeholder>Departure Terminal</option>
+                        </select>
+                    </div>
+                    <span *ngIf="!bookingForm.get('travellingFrom').valid && bookingForm.get('travellingFrom').touched"
+                        class="help-block">
+                        <span *ngIf="bookingForm.get('travellingFrom').errors['required']" class="text-danger">This
+                            field is
+                            required!</span>
+                    </span>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="travellingTo">Travelling To:</label>
+                        <select class="form-control" id="travellingTo" formControlName="travellingTo">
+                            <option disabled="disabled" placeholder>Select Destination</option>
+                        </select>
+                    </div>
+                    <span *ngIf="!bookingForm.get('travellingTo').valid && bookingForm.get('travellingTo').touched"
+                        class="help-block">
+                        <span *ngIf="bookingForm.get('travellingTo').errors['required']" class="text-danger">This
+                            field is
+                            required!</span>
+                    </span>
+                </div>
+                <div class="col-sm-12">
+                    <div class="datepicker-container">
+                        <div class="form-group">
+                            <label for="dateDeparture">Departure Date:</label>
+                            <input class="form-control datetimepicker" id="dateDeparture" formControlName="dateDeparture"
+                                placeholder="2018-12-14" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                        </div>
+                        <span *ngIf="!bookingForm.get('dateDeparture').valid && bookingForm.get('dateDeparture').touched"
+                            class="help-block">
+                            <span *ngIf="bookingForm.get('dateDeparture').errors['required']" class="text-danger">This
+                                field is
+                                required!</span>
+                        </span>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="adult">Passager:</label>
-                    <select class="form-control" id="adult">
-                        <option placeholder>Passager</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="adult">Passager:</label>
+                        <select class="form-control" id="adult" formControlName="adult">
+                            <option placeholder>Passager</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <span *ngIf="!bookingForm.get('adult').valid && bookingForm.get('adult').touched" class="help-block">
+                        <span *ngIf="bookingForm.get('adult').errors['required']" class="text-danger">This
+                            field is
+                            required!</span>
+                    </span>
+                </div>
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase" [disabled]="!bookingForm.valid">
+                        Book Now </button>
                 </div>
             </div>
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-warning btn-lg btn-round btn-block text-uppercase" (click)="onSubmit()">
-                    Book Now </button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>

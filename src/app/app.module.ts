@@ -1,7 +1,8 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -23,6 +24,7 @@ import { NoticeCardComponent } from './views/about-us/notice-card/notice-card.co
 import { TerminalsComponent } from './views/terminals/terminals.component';
 import { VerifyBookingComponent } from './views/verify-booking/verify-booking.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
+import { AjaxService } from './ajax.service';
 import { PartnersComponent } from './views/about-us/partners/partners.component';
 import { LoginModalComponent } from './views/login-modal/login-modal.component';
 
@@ -49,18 +51,18 @@ import { LoginModalComponent } from './views/login-modal/login-modal.component';
         BrowserAnimationsModule,
         NgbModule.forRoot(),
         FormsModule,
+        ReactiveFormsModule,
         // RouterModule,
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
-        MainModule
+        MainModule,
+        HttpModule,
     ],
     providers: [
         BookingService,
+        AjaxService,
     ],
-    bootstrap: [
-        AppComponent,
-    ],
-
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
