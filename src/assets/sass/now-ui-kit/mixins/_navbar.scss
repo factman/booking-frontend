@@ -224,3 +224,62 @@
     }
 
 }
+
+.page-top {
+    padding: 20px 0px 10px;
+    background-image: linear-gradient(180deg, $warning-color-opacity, $warning-color);
+    margin-bottom: 30px;
+    margin-top: 66px;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    .container {
+        &:after {
+            content: '';
+            width: 50%;
+            height: 90%;
+            border-bottom-left-radius: 100px;
+            background-color: $white-color;
+            background-image: linear-gradient(180deg, $warning-color, $warning-color-opacity);
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font: normal 100%/normal Arial, Helvetica, sans-serif;
+            color: rgba(0,0,0,1);
+            -o-text-overflow: clip;
+            text-overflow: clip;
+        }
+        p {
+            display: inline-block;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            border: none;
+            font-size: 3em;
+            // font: normal 70px/1 "Aladin", Helvetica, sans-serif;
+            color: $primary-color;
+            text-align: center;
+            -o-text-overflow: clip;
+            text-overflow: clip;
+            white-space: pre;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.6) , -1px -1px 1px $primary-color-opacity ;
+            position: relative;
+            z-index: 1;
+        }
+        h6 {
+            position: relative;
+            z-index: 1;
+            color: $white-color;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+            text-align: right;
+            font-weight: normal;
+            text-transform: none;
+            font-size: large;
+            -o-text-overflow: clip;
+            text-overflow: clip;
+            white-space: pre;
+            float: right;
+        }
+    }
+}
