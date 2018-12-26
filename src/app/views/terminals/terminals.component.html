@@ -5,10 +5,10 @@
                 <p class="display-4">OUR TERMINALS</p>
             </div>
         </div>
-        <div class="container full-section">
-            <div class="row">
+        <div class="container table-con">
+            <div class="row table-head table-warning">
                 <div class="col-md-3">
-                    <div class="form-group">
+                    <div class="form-group table-form">
                         <label for="terminalPerPage">Terminals Per Page:</label>
                         <select class="form-control" id="terminalPerPage">
                             <option placeholder>Terminals Per Page</option>
@@ -23,14 +23,14 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <div class="form-group">
+                    <div class="form-group table-form">
                         <label for="search">Search</label>
                         <input type="text" class="form-control" name="search" id="search" placeholder="Search" (input)="updateValue($event)">
                     </div>
                 </div>
             </div>
-            <div class="row pt-30px">
-                <div class="col">
+            <div class="row">
+                <div class="col table100">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -54,7 +54,7 @@
                             <tr>
                                 <td colspan="5">
                                     <ngb-pagination [collectionSize]="collections" [(page)]="page" aria-label="Default pagination"
-                                        class="pagination-danger d-flex justify-content-center" (pageChange)="onPageChange($event)"
+                                        class="pagination-warning d-flex justify-content-center" (pageChange)="onPageChange($event)"
                                         [boundaryLinks]="true" [pageSize]="pageSize"></ngb-pagination>
                                 </td>
                             </tr>

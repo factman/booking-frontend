@@ -12,6 +12,7 @@ export class LoginModalComponent implements OnInit {
     @Input() size = 'md';
     @Input() icon = 'users_circle-08';
     @Input() text = 'Login';
+    @Input() displayType = false;
 
     closeResult: string;
 

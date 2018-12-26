@@ -1,3 +1,5 @@
+@import '../../../assets/sass/now-ui-kit/variables';
+
 @mixin small {
     @media screen and (max-width: 768px){
         @content;
@@ -28,7 +30,7 @@ thead tr{
 
 tr{
     @include small{
-        border: 1px solid grey;
+        // border: 1px solid grey;
     }
 }
 tbody td{ 
@@ -37,7 +39,7 @@ tbody td{
     }
     @include small{
         border: none;
-        border-bottom: 1px solid grey;
+        // border-bottom: 1px solid grey;
         position: relative;
     }
     &:not(.actions-button){
@@ -62,40 +64,40 @@ table, thead, tbody, th, td, tr {
         display: block;
     }
 }
-tbody {
-    tr {
-        &:nth-of-type(4n + 1){
-            td{
-                border: 1px solid rgb(248, 99, 49);
-                &:first-child{
-                    @include small{
-                        background-color: rgb(248, 99, 49);
-                        color: #ffffff;
-                    }
-                }
-            }
-        }
-        &:nth-of-type(4n + 3){
-            td{
-                border: 1px solid rgb(5, 8, 98);
-                &:first-child{
-                    @include small{
-                        background-color:rgb(5, 8, 98);
-                        color: #ffffff;
-                    }
-                }
-            }
-        }
-        td{
-            &:first-child{
-                @include small{
-                    font-weight: bold;
-                    font-size: 1.3rem;
-                }
-            }
-        }
-    }
-}
+// tbody {
+//     tr {
+//         &:nth-of-type(4n + 1){
+//             td{
+//                 // border: 1px solid rgb(248, 99, 49);
+//                 &:first-child{
+//                     @include small{
+//                         background-color: rgb(248, 99, 49);
+//                         color: #ffffff;
+//                     }
+//                 }
+//             }
+//         }
+//         &:nth-of-type(4n + 3){
+//             td{
+//                 // border: 1px solid rgb(5, 8, 98);
+//                 &:first-child{
+//                     @include small{
+//                         background-color:rgb(5, 8, 98);
+//                         color: #ffffff;
+//                     }
+//                 }
+//             }
+//         }
+//         td{
+//             &:first-child{
+//                 @include small{
+//                     font-weight: bold;
+//                     font-size: 1.3rem;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 table{
 
@@ -141,16 +143,54 @@ tfoot{
         display: block;
     }
     // display: table-footer-group;
-    td{
-        @include small{
-            width: 100%;
+    tr {
+        td {
+            @include small{
+                width: 100%;
+            }
+            padding: 0px;
+            padding-top: 30px;
+            margin: 0px;
         }
     }
 }
-tbody tr:nth-of-type(4n + 1){
-    background-color: rgba(248, 99, 49, 0.18);
+
+// tbody tr:nth-of-type(4n + 1){
+//     background-color: rgba(248, 99, 49, 0.18);
+// }
+
+// tbody tr:nth-of-type(4n + 3){
+//     background-color: rgba(5, 8, 98, 0.22);
+// }
+
+.table-con {
+    box-shadow: $box-shadow-raised;
+    margin: 100px auto;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: $border-radius-extreme;
+    .table-warning {
+        background-color: white;
+        background-image: linear-gradient(180deg, $warning-color-alert, $warning-color);
+    }
 }
 
-tbody tr:nth-of-type(4n + 3){
-    background-color: rgba(5, 8, 98, 0.22);
+.table-form {
+    input {
+        background: rgba(255,255,255, 0);
+        border: 2px solid rgba(255,255,255, .5);
+        color: $white-color;
+        transition: all 400ms;
+        &:hover {
+            border-color: rgba(255,255,255, 1);
+            background: rgba(255,255,255, .15);
+        }
+    }
+    label {
+        color: white;
+    }
+}
+
+.table-head {
+    padding: 10px;
 }
