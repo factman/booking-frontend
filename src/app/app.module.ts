@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 // import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -58,6 +59,9 @@ import { LoginModalComponent } from './views/login-modal/login-modal.component';
         ExamplesModule,
         MainModule,
         HttpModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'YOUR_GOOGLE_MAP_API_KEY',
+          }),
     ],
     providers: [
         BookingService,

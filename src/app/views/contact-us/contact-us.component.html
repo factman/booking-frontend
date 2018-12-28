@@ -1,60 +1,101 @@
-<div class="wrapper mt-50px">
+<div class="wrapper">
     <div class="bg-light">
-        <div class="row page-top">
+        <div class="row page-top mb-0">
             <div class="container">
-                <p class="display-4">Get In Touch</p>
-                <h6>We are always happy to help our customers</h6>
+                <p class="display-4">Contact Us</p>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 col-sm-12">
-                    <div class="passager-detail">
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="marginless text-center pt-10px">SEND US YOUR ENQUIRY</h4>
+        <div class="full-section parallax parallax-filter" style="background-image: url('assets/img/peace-mass-tansit-bg-3.jpg');">
+            <div class="container full-section">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 ml-auto mr-auto">
+                        <h2 class="title text-white">Get in Touch</h2>
+                        <h4 class="description text-light">
+                            You need more information? Check what other persons are saying about our product.
+                            They are very happy with their purchase.
+                        </h4>
+                        <div class="info info-horizontal">
+                            <div class="description">
+                                <h4 class="info-title text-white">
+                                    <i class="now-ui-icons ui-1_email-85 mr-3"></i> Mail or Text Us
+                                </h4>
+                                <p class="text-light ml-5">
+                                    Email: contact@peacegroup.ng
+                                    <br />
+                                    SMS: 07034157751
+                                </p>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col plr-30px">
-                                <div class="form-group">
-                                    <label for="">Fullname</label>
-                                    <input type="text" class="form-control" placeholder="Fullname">
-                                </div>
-                            </div>
-                            <div class="col plr-30px">
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="text" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col plr-30px">
-                                <div class="form-group">
-                                    <label for="">Message</label>
-                                    <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col text-center">
-                                <button class="btn btn-primary">SUBMIT</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col plr-30px">
-                                <p class="text-center">For more complaints Please call: 0700PEACEMASS or 07007322362,
-                                    Email: contact@peacegroup.ng, SMS: 07034157751</p>
+                        <div class="info info-horizontal">
+                            <div class="description">
+                                <h4 class="info-title text-white">
+                                    <i class="now-ui-icons tech_mobile mr-3"></i> Give us a ring
+                                </h4>
+                                <p class="text-light ml-5">
+                                    0700PEACEMASS
+                                    <br />
+                                    or
+                                    <br />
+                                    07007322362
+                                </p>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-xl-6 col-lg-7 ml-auto mr-auto">
+                        <div class="form-wrapper bg-white">
+                            <div class="form-header">
+                                <br />
+                                <p class="text-center font-weight-bold padding-10">SEND US YOUR ENQUIRY</p>
+                                <br />
+                                <div class="icon icon-primary">
+                                    <i class="now-ui-icons ui-1_send"></i>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="passager-detail">
+                                <div class="row">
+                                    <div class="col plr-30px">
+                                        <div class="form-group">
+                                            <label for="">Fullname</label>
+                                            <input type="text" class="form-control" placeholder="Fullname">
+                                        </div>
+                                    </div>
+                                    <div class="col plr-30px">
+                                        <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input type="text" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col plr-30px">
+                                        <div class="form-group">
+                                            <label for="">Message</label>
+                                            <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <button class="btn btn-warning btn-round btn-lg">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="page-header clear-filter">
+        <div class="page-header-image rellax-header" data-rellax-speed="-7">
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+        <div class="container">
+            <div class="content-center brand"></div>
         </div>
     </div>
 </div>
