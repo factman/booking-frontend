@@ -27,6 +27,7 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component';
 import { AjaxService } from './ajax.service';
 import { PartnersComponent } from './views/about-us/partners/partners.component';
 import { LoginModalComponent } from './views/login-modal/login-modal.component';
+import { RegisterLoginModelComponent } from './shared/register-login-model/register-login-model.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +47,7 @@ import { LoginModalComponent } from './views/login-modal/login-modal.component';
         ContactUsComponent,
         PartnersComponent,
         LoginModalComponent,
+        RegisterLoginModelComponent,
     ],
     imports: [
         BrowserAnimationsModule,

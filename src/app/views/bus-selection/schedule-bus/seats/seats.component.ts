@@ -17,7 +17,6 @@ export class SeatsComponent implements OnInit {
     constructor(private booking: BookingService) { }
 
     ngOnInit() {
-        console.log(this.occupiedSeats);
         this.numberOfSeats = this.range(1, this.seaters);
     }
 
@@ -44,6 +43,7 @@ export class SeatsComponent implements OnInit {
             if (!element.className.includes('active')) {
                 this.seatNumberSet.delete(this.currentSeat);
             }
+            this.seatEvent.emit(this.seatNumberSet);
             this.getSelectedSeats(this.seatNumberSet);
         } else {
             // For IE9

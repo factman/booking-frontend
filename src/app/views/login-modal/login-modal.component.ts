@@ -7,7 +7,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
     styleUrls: ['./login-modal.component.scss']
 })
 export class LoginModalComponent implements OnInit {
-
     @Input() color = 'primary';
     @Input() size = 'md';
     @Input() icon = 'users_circle-08';
@@ -55,5 +54,6 @@ export class LoginModalComponent implements OnInit {
             return `with: ${reason}`;
         }
     }
+
 
 }

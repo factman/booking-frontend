@@ -12,7 +12,7 @@
             <p class="p-absolute pb-35px">{{seaters - occupiedSeats.length}} Seat(s) available</p>
         </div>
         <div class="col-sm-3">
-            <p>Adult: <span class="price-tag">₦ 5,250.00</span></p>
+            <p>Adult: <span class="price-tag">₦ {{displayAmount}}</span></p>
             <button class="btn btn-primary" (click)="changeCurrentState()">View Seat</button>
         </div>
     </div>
@@ -20,8 +20,16 @@
 <div class="container p-20 bg-light-grey" [@changeState]="currentState">
     <div class="row">
         <div class="col-sm-6">
-            <app-seats [occupiedSeats]="occupiedSeats" [seaters]="seaters" [numberOfSeatBooked]="numberOfSeatBooked"></app-seats>
+            <app-seats (seatEvent)="getCurrentselectedSeats($event)" [occupiedSeats]="occupiedSeats" [seaters]="seaters"
+                [numberOfSeatBooked]="numberOfSeatBooked"></app-seats>
         </div>
+    </div>
+    <div class="row" *ngIf="showErrorMessage">
+        <div class="col-sm-12 text-center">
+            <p class="text-danger">You must select {{numberOfSeatBooked}} seet(s)</p>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12 text-center">
             <div class="btn btn-primary" (click)="routeToPassagerDatails()">
                 Continue

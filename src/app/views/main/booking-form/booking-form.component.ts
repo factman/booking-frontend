@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ɵConsole } from '@angular/core';
 import { NgbDatepickerConfig, NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -79,6 +79,10 @@ export class BookingFormComponent implements OnInit, OnDestroy {
             'dateDeparture': new FormControl(null, [Validators.required]),
             'adult': new FormControl(null, [Validators.required])
         });
+
+        document.addEventListener('keydown', (e) => {
+            console.log(e.key);
+        })
     }
 
     initialSelectFields() {

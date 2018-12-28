@@ -33,14 +33,19 @@ export class ScheduleBusComponent implements OnInit {
     numberOfSeatBooked = 1;
     occupiedSeats = [];
     seaters: number;
+    selectedSeats = [];
+    activateButton = false;
+    showErrorMessage = false;
+    displayAmount: string;
 
     constructor(private router: Router, private booking: BookingService) { }
 
     ngOnInit() {
-        const { departure_time, occupied_seats, seaters } = this.scheduleBus;
+        const { departure_time, occupied_seats, seaters, route } = this.scheduleBus;
         this.occupiedSeats = occupied_seats ? occupied_seats.split(',').map(seat => +seat.trim()) : [];
         this.seaters = +seaters;
         this.departureTime = moment(departure_time);
+        this.displayAmount = (route.fare_class1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         const bookingPhaseOne = getLocalStorage('bookingPhaseOne');
         if (bookingPhaseOne) {
             this.busRoute = bookingPhaseOne.route;
@@ -53,7 +58,17 @@ export class ScheduleBusComponent implements OnInit {
     }
 
     routeToPassagerDatails() {
-        this.router.navigate(['passager-details']);
+        if (this.activateButton) {
+            this.showErrorMessage = false;
+            this.router.navigate(['passager-details']);
+        } else {
+            this.showErrorMessage = true;
+        }
+    }
+
+    getCurrentselectedSeats(event: any) {
+        this.selectedSeats = Array.from(event).sort((a: number, b: number) => a - b);
+        this.activateButton = this.selectedSeats.length === this.numberOfSeatBooked;
     }
 
 }
