@@ -62,12 +62,7 @@
                         <p>Contact Us</p>
                     </a>
                 </li>
-                <li class="nav-item nav-pills-warning" routerLinkActive="active">
-                    <a class="nav-link" routerLink="/login">
-                        <i class="fa fa-user-circle"></i>
-                        <p>Login</p>
-                    </a>
-                </li>
+                <app-login-modal [displayType]="'menu'" [color]="'warning'" [size]="'lg'" [icon]="'gestures_tap-01'" [text]="'Modal'"></app-login-modal>
                 <!-- <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="/gallery">
                         <i class="now-ui-icons files_paper"></i>

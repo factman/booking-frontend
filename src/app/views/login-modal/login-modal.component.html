@@ -18,10 +18,16 @@
     </div>
 </ng-template> -->
 
-<button class="btn btn-{{color}} btn-{{size}}" (click)="open(modal_mini, 'Login')">
+<button *ngIf="displayType == false" class="btn btn-{{color}} btn-{{size}}" (click)="open(modal_mini, 'Login')">
     <i class="now-ui-icons {{icon}}" *ngIf="icon"></i>
     {{text}}
 </button>
+<li *ngIf="displayType == 'menu'" class="nav-item nav-pills-{{color}}" (click)="open(modal_mini, 'Login')" routerLinkActive="active">
+    <a class="nav-link">
+        <i class="now-ui-icons {{icon}}" *ngIf="icon"></i>
+        <p>{{text}}</p>
+    </a>
+</li>
 
 <ng-template #modal_mini let-c="close" let-d="dismiss">
     <div class="modal-header justify-content-center">

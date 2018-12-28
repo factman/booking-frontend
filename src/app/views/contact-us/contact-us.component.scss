@@ -1,9 +1,77 @@
-.passager-detail{
-    background: white;
-    border-top: 1px solid #e14213;
-    border-bottom: 1px solid #050861;
-    border-radius: 5px;
-    margin-bottom:20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+@import '../../../assets/sass/now-ui-kit/variables';
+
+// .passager-detail{
+//     background: white;
+//     border-top: 1px solid #e14213;
+//     border-bottom: 1px solid #050861;
+//     border-radius: 5px;
+//     margin-bottom:20px;
+//     padding-top: 30px;
+//     padding-bottom: 30px;
+// }
+
+agm-map {
+    height: 100%;
+}
+
+.form-wrapper{
+    border-radius: $border-radius-large;
+    padding: 20px;
+    box-shadow: 0 20px 40px 5px $warning-color-opacity;
+}
+
+.bg-orange{
+    background: $warning-color;
+}
+
+.icon {
+    font-size: 30px;
+    line-height: 2.7;
+    max-width: 80px;
+    text-align: center;
+    color: #888;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 40px -6px rgba(0,0,0,.3);
+    background-color: #fff;
+    position: relative;
+    // padding-top: 5px;
+}
+
+.icon-primary {
+    box-shadow: 0 10px 40px -6px $warning-color;
+    color: $warning-color;
+}
+
+.form-content{
+    height: 85%;
+}
+
+.trip-type-wrapper{
+    text-align: center;
+    .trip-type{
+        background: #ffffff;
+        color: $warning-color;
+        border: 1px solid $warning-color;
+        display: inline-block;
+        margin: 10px;
+        div {
+            display:inherit;
+            padding: 10px;
+            cursor: pointer;
+
+        }
+        div.active{
+            background: $warning-color;
+            color: #ffffff;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .fd-column-reverse {
+        flex-direction: column-reverse;
+    }
 }
