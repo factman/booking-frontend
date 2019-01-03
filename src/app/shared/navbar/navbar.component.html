@@ -62,7 +62,12 @@
                         <p>Contact Us</p>
                     </a>
                 </li>
-                <app-login-modal [displayType]="'menu'" [color]="'warning'" [size]="'lg'" [icon]="'gestures_tap-01'" [text]="'Modal'"></app-login-modal>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="initLoginModal()">
+                        <i class="fa fa-send"></i>
+                        <p>Login</p>
+                    </a>
+                </li>
                 <!-- <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" routerLink="/gallery">
                         <i class="now-ui-icons files_paper"></i>

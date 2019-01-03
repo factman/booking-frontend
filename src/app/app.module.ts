@@ -29,6 +29,9 @@ import { AjaxService } from './ajax.service';
 import { PartnersComponent } from './views/about-us/partners/partners.component';
 import { LoginModalComponent } from './views/login-modal/login-modal.component';
 import { RegisterLoginModelComponent } from './shared/register-login-model/register-login-model.component';
+import { LoginComponent } from './common/login/login.component';
+import { DomService } from './dom.service';
+import { ModalService } from './modal.service';
 
 @NgModule({
     declarations: [
@@ -49,6 +52,7 @@ import { RegisterLoginModelComponent } from './shared/register-login-model/regis
         PartnersComponent,
         LoginModalComponent,
         RegisterLoginModelComponent,
+        LoginComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -63,11 +67,16 @@ import { RegisterLoginModelComponent } from './shared/register-login-model/regis
         HttpModule,
         AgmCoreModule.forRoot({
             apiKey: 'YOUR_GOOGLE_MAP_API_KEY',
-          }),
+        }),
+    ],
+    entryComponents: [
+        LoginComponent,
     ],
     providers: [
         BookingService,
         AjaxService,
+        DomService,
+        ModalService
     ],
     bootstrap: [AppComponent]
 })

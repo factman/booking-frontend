@@ -1,0 +1,38 @@
+@import '../../../assets/sass/now-ui-kit/variables';
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.header-wrapper{
+    background: $primary-color;
+    color: white;
+    @extend .noselect;
+}
+.login-header{
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.login-header.active{
+    background: $warning-color;
+}
+
+.content-wrapper{
+    border: 1px solid $warning-color;
+    width: 100%;
+    min-height: 50px;
+    background: #ffffff; 
+    padding: 20px;
+    text-align: left;
+}
+
+.input-group-text{
+    background: $primary-color;
+    color: #ffffff;
+}

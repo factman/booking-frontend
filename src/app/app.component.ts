@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import 'rxjs/add/operator/filter';
+import { ModalService } from './modal.service';
 
 @Component({
     selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
 
     constructor(
         private router: Router,
+        private modalService: ModalService,
         public location: Location
     ) { }
     ngOnInit() {
@@ -29,5 +31,8 @@ export class AppComponent implements OnInit {
 
             this.navbar.sidebarClose();
         });
+    }
+    removeModal() {
+        this.modalService.destroy();
     }
 }

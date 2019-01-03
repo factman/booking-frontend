@@ -1,0 +1,82 @@
+<div class="container is-paddingless">
+    <div class="row">
+        <div class="col">
+            <div class="header-wrapper">
+                <div class="row is-marginless">
+                    <div class="col-sm-12 col-md-6 login-header" [class.active]="currentActive === 'login'" (click)="changeCurrentActive('login')">Login</div>
+                    <div class="col-sm-12 col-md-6 login-header" [class.active]="currentActive === 'register'" (click)="changeCurrentActive('register')">Register</div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <form *ngIf="currentActive === 'login'">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">OTP</label>
+                                        <input type="text" class="form-control" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase">
+                                            Login </button>
+                                    </div>
+                                </form>
+                                <form *ngIf="currentActive === 'register'">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="surname">Surname</label>
+                                                <input type="text" class="form-control" placeholder="Surname">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="othername">Other Names</label>
+                                                <input type="text" class="form-control" placeholder="Other Names">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="surname">Mobile Number</label>
+                                                <input type="text" class="form-control" placeholder="Mobile Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="othername">Other Mobile Number</label>
+                                                <input type="text" class="form-control" placeholder="Other Mobile Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase">
+                                            Register </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

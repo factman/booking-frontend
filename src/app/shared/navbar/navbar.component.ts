@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { ModalService } from 'app/modal.service';
+import { LoginComponent } from 'app/common/login/login.component';
 
 @Component({
     selector: 'app-navbar',
@@ -9,13 +11,19 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(private element: ElementRef) {
+    constructor(private element: ElementRef, private modalService: ModalService) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key.trim().toLocaleLowerCase() === 'escape') {
+                this.modalService.destroy();
+            }
+        })
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -43,4 +51,11 @@ export class NavbarComponent implements OnInit {
             this.sidebarClose();
         }
     };
+
+    initLoginModal() {
+        const inputs = {
+            isMobile: false
+        }
+        this.modalService.init(LoginComponent, inputs, {});
+    }
 }

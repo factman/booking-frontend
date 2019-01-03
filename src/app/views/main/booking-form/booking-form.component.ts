@@ -79,10 +79,6 @@ export class BookingFormComponent implements OnInit, OnDestroy {
             'dateDeparture': new FormControl(null, [Validators.required]),
             'adult': new FormControl(null, [Validators.required])
         });
-
-        document.addEventListener('keydown', (e) => {
-            console.log(e.key);
-        })
     }
 
     initialSelectFields() {
