@@ -72,7 +72,6 @@ export class BookingFormComponent implements OnInit, OnDestroy {
     ngOnInit() {
 
         this.initialSelectFields();
-        // this.onClickTripType();
         this.bookingForm = new FormGroup({
             'travellingFrom': new FormControl(null, [Validators.required]),
             'travellingTo': new FormControl(null, [Validators.required]),

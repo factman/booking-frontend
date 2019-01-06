@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 @Injectable()
 
 export class AjaxService {
     counterMonitor = 0;
-    constructor(private http: Http) { }
+    httpOptions: any;
+    constructor(private http: Http) {
+        this.httpOptions = {
+            headers: new Headers({
+              'Content-Type':  'application/json'
+            //   'Authorization': 'my-auth-token'
+            })
+          };
+    }
 
     getData(url) {
         return this.http.get(url)
@@ -18,7 +26,7 @@ export class AjaxService {
                     } catch {
                         return throwError({
                             statusCode: false,
-                            error: 'Error occured why fetching data'
+                            error: 'Error occured while fetching data'
                         });
                     }
                 }),
@@ -27,6 +35,27 @@ export class AjaxService {
                         this.counterMonitor += 1;
                         return this.getData(url);
                     }
+                    return this.onError(res);
+                })
+            );
+    }
+
+    postData(url, data) {
+        return this.http.post(url, data, this.httpOptions)
+            .pipe(
+                map((res: Response) => {
+                    console.log(res);
+                    try {
+                        return res.json();
+                    } catch {
+                        return throwError({
+                            statusCode: false,
+                            error: 'Error occured posting data'
+                        });
+                    }
+                }),
+                catchError((res: Response) => {
+                    console.log(res);
                     return this.onError(res);
                 })
             );

@@ -7,68 +7,144 @@
                     <div class="col-sm-12 col-md-6 login-header" [class.active]="currentActive === 'register'" (click)="changeCurrentActive('register')">Register</div>
                 </div>
             </div>
-            <div class="content-wrapper">
+            <div class="content-wrapper" id="content-wrapper">
                 <div class="row">
                     <div class="col">
                         <div class="row">
                             <div class="col">
-                                <form *ngIf="currentActive === 'login'">
+                                <form [ngStyle]="{
+                                    display: currentActive === 'login' ? 'block' : 'none'
+                                }" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email Address">
+                                        <input type="email" formControlName="email" class="form-control" placeholder="Email Address">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" formControlName="password" class="form-control"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Phone Number</label>
+                                        <input type="text" formControlName="phone" class="form-control" placeholder="Phone Number">
                                     </div>
                                     <div class="form-group">
                                         <label for="">OTP</label>
-                                        <input type="text" class="form-control" placeholder="Email Address">
+                                        <input type="text" formControlName="otp" class="form-control" placeholder="Email Address">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase">
+                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase"
+                                            [disabled]="!loginForm.valid">
                                             Login </button>
                                     </div>
                                 </form>
-                                <form *ngIf="currentActive === 'register'">
+                                <form [ngStyle]="{
+                                    display: currentActive === 'register' ? 'block' : 'none'
+                                }" [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <label for="surname">Surname</label>
-                                                <input type="text" class="form-control" placeholder="Surname">
+                                                <input type="text" formControlName="surname" class="form-control"
+                                                    placeholder="Surname">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
-                                                <label for="othername">Other Names</label>
-                                                <input type="text" class="form-control" placeholder="Other Names">
+                                                <label for="other_name">Other Names</label>
+                                                <input type="text" formControlName="other_name" class="form-control"
+                                                    placeholder="Other Names">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
-                                                <label for="surname">Mobile Number</label>
-                                                <input type="text" class="form-control" placeholder="Mobile Number">
+                                                <label for="phone">Mobile Number</label>
+                                                <input type="text" formControlName="phone" class="form-control"
+                                                    placeholder="Mobile Number">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
-                                                <label for="othername">Other Mobile Number</label>
-                                                <input type="text" class="form-control" placeholder="Other Mobile Number">
+                                                <label for="phone2">Other Mobile Number</label>
+                                                <input type="text" formControlName="phone2" class="form-control"
+                                                    placeholder="Other Mobile Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" formControlName="email" class="form-control"
+                                                    placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="customer_type">Customer:</label>
+                                                <select class="form-control" id="customer_type" formControlName="customer_type">
+                                                    <option disabled="disabled" placeholder>Customer Type</option>
+                                                    <option value="individual">INDIVIDUAL</option>
+                                                    <option value="organization">ORGANIZATION</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="gender">Gender:</label>
+                                                <select class="form-control" id="gender" formControlName="gender">
+                                                    <option disabled="disabled" placeholder>Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="country_iso2">Country:</label>
+                                                <select class="form-control" id="country_iso2" formControlName="country_iso2">
+                                                    <option disabled="disabled" placeholder>Country</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" formControlName="password" class="form-control"
+                                                    placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="confirm_password">Confirm Password</label>
+                                                <input type="password" formControlName="confirm_password" class="form-control"
+                                                    placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="contact_person">Next of Kin's Name</label>
+                                                <input type="text" formControlName="contact_person" class="form-control"
+                                                    placeholder="Next of Kin's Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="contact_person_phone">Next of Kin's Phone</label>
+                                                <input type="text" formControlName="contact_person_phone" class="form-control"
+                                                    placeholder="Next of Kin's Phone">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email Address">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase">
+                                        <button type="submit" class="btn btn-warning btn-lg btn-round btn-block text-uppercase"
+                                            [disabled]="!registerForm.valid">
                                             Register </button>
                                     </div>
                                 </form>

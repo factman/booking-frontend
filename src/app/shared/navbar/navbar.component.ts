@@ -20,7 +20,8 @@ export class NavbarComponent implements OnInit {
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
 
         document.addEventListener('keydown', (e) => {
-            if (e.key.trim().toLocaleLowerCase() === 'escape') {
+
+            if (e.key !== undefined && e.key.trim().toLocaleLowerCase() === 'escape') {
                 this.modalService.destroy();
             }
         })

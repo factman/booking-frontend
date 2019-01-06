@@ -116,6 +116,8 @@
     text-align: center;
     box-shadow: 0px 0px 2px 1px black;
     z-index: 100;
+    max-height: 65vh;
+    border-bottom: 1px solid #fe7200;
     @include bp(small){
         max-width: 400px;
         margin-left: -200px;
